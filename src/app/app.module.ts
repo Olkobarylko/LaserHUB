@@ -12,6 +12,10 @@ import { CreateComponent } from './pages/create/create.component';
 import { GoodsComponent } from './pages/goods/goods.component';
 import { ServiceComponent } from './pages/service/service.component';
 
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,10 @@ import { ServiceComponent } from './pages/service/service.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
