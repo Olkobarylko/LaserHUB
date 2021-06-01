@@ -20,7 +20,26 @@ header {
     font-size: 14px;
     color: #fff;
     line-height: 34px;
+    position: relative;
   }
+
+  a::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: all .32s ease-out;
+  }
+
+  a:hover::after {
+    content: "";
+    width: 100%;
+  }
+
+ 
 }
 
 .create {
@@ -36,6 +55,12 @@ header {
     text-decoration: none;
     background: transparent;
     border-color: white;
+  }
+  a::after {
+    content: none;
+  }
+  a:hover::after {
+    content: none;
   }
 
 }
