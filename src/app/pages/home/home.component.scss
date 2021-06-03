@@ -1,0 +1,192 @@
+.header-main-section {
+  background-image: url('https://lasergiststatic-bk4yc4gnhze4xq.netdna-ssl.com/wp-content/uploads/2016/09/lg-bg.jpg');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+.header-text-main {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: #fff;
+  font-size: 50px;
+  line-height: 60px;
+  position: relative;
+  max-width: 1230px;
+  padding: 0px 25px;
+  margin: 0 auto;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 3%);
+  text-align: center;
+  top: 30vh;
+}
+
+.three-li-header {
+  position: relative;
+  text-indent: 0;
+  margin-top: 20px;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 0px 1px 1px rgb(0 0 0 / 8%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  top: 32vh;
+
+  li {
+    margin-right: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 15px;
+    height: 15px;
+    background-image: url('https://image.flaticon.com/icons/png/512/403/403474.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.button-header {
+  display: block;
+  background: #1285e8;
+  color: #fff;
+  font-family: 'montserrat';
+  padding: 15px 25px;
+  width: 170px;
+  line-height: 20px;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  transition: all .15s ease-out;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.button-header:hover {
+  background: #2d9dff;
+}
+
+.header-p-button-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 34vh;
+}
+
+.animte-button {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 64vh;
+
+  a {
+    height: 51px;
+    width: 30px;
+    border: #fff 2px solid;
+    border-radius: 26px;
+    position: relative;
+  }
+
+  .dot-animate {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation-name: dot;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes dot {
+  0% {
+    top: 10px;
+    opacity: 1;
+    width: 5px;
+    height: 5px;
+    left: 10px;
+  }
+
+  5%{
+    top: 7px;
+  }
+
+  25% {
+    top: 30px;
+    width: 3px;
+    opacity: 0;
+    left: 11px;
+  }
+
+  50% {
+    top: 10px;
+
+  }
+  100% {
+    opacity: 0;
+  
+  }
+}
+
+.howItWorks {
+    margin: 70px 0;
+  
+    h4 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      font-size: 33px;
+      margin-bottom: 30px;
+      color: rgb(51, 51, 51);
+      line-height: 24.2px;
+    }
+  
+    .center-block {
+      max-width: 1230px;
+      height: 262px;
+      margin: 0 auto;
+      display: flex;
+  
+      .small-block {
+          width: 33.33333333%;
+        padding: 0px 15px;
+  
+        .small-block-icons {
+          width: 150px;
+          margin: 0 auto;
+  
+          img {
+            vertical-align: middle;
+          }
+        }
+  
+        h3 {
+          text-align: center;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 22px;
+          font-weight: 600;
+          color: rgb(41, 41, 41);
+          margin: 20px 0px 10px;
+        }
+  
+        p {
+          font-family: 'Source Sans Pro', sans-serif;
+          text-align: center;
+          color: #444;
+          font-size: 17px;
+          font-weight: 300;
+          margin-bottom: 10px;
+          height: 48px;
+          line-height: 24px;
+  
+        }
+      }
+    }
+  }
