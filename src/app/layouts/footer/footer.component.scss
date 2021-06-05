@@ -1,7 +1,6 @@
 footer {
     text-align: center;
     border-top: 0px solid #efefef;
-    margin-left: auto;
     display: flex;
     justify-content: center;
     margin:  25px auto;
@@ -12,15 +11,13 @@ footer {
 .site-info {
     color: rgb(181, 186, 197);
     letter-spacing: -0.015em;
-    text-align: left;
     font-size: 13px;
-    padding-right: 20%;
+    padding-left: 15%;
     cursor: pointer;
 }
 
 ul.footer-links {
     list-style-type: none;
-    text-align: right;
 }
 ul, ol {
     margin-top: 0;
