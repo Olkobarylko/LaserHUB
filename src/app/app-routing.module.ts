@@ -9,6 +9,7 @@ import { GoodsComponent } from './pages/goods/goods.component';
 import { ServiceComponent } from './pages/service/service.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'discover', component: DiscoverComponent },
   { path: 'blog', component: BlogComponent },
