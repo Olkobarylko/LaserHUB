@@ -6,6 +6,7 @@ header {
   padding: 0px 120px;
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
 .center-block {
@@ -56,9 +57,11 @@ header {
     background: transparent;
     border-color: white;
   }
+
   a::after {
     content: none;
   }
+
   a:hover::after {
     content: none;
   }
