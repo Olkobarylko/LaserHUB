@@ -15,6 +15,7 @@ import { ServiceComponent } from './pages/service/service.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     BlogComponent,
     CreateComponent,
     GoodsComponent,
-    ServiceComponent
+    ServiceComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
