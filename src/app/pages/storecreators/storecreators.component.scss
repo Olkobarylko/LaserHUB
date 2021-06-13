@@ -1,0 +1,146 @@
+#outsourcing-hero {
+  height: 50vh;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-family: 'montserrat', helvetica, arial, sans-serif;
+    display: block;
+    max-width: 680px;
+    position: relative;
+    font-size: 42px;
+  }
+
+  h1:after {
+    content: 'BULK ORDERS';
+    display: block;
+    font-size: 12px;
+    background-color: #12c2ac;
+    margin: 0 auto;
+    width: 160px;
+    margin-top: 21px;
+    padding: 8px;
+  }
+}
+
+#outsourcing-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 15px;
+  margin-bottom: 100px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(0, 10, 40, .05);
+  margin-top: 40px;
+}
+
+#outsourcing-intro p {
+  font-size: 18.5px;
+  margin-bottom: 25px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+#outsourcing-intro p:first-child {
+  font-weight: 600;
+}
+
+.disclaim-outsource {
+  color: rgba(0, 10, 40, .4);
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.block-info {
+  h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 32px;
+  }
+
+  h2::after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    border-top: 4px solid #1285e8;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  p.header-processes-p {
+    font-size: 20px;
+    max-width: 680px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  p.header-processes-p.smaller-size {
+    font-size: 17px;
+    margin-bottom: 70px;
+    font-weight: bold;
+    color: rgba(0, 10, 40, .35);
+  }
+}
+
+.render-block {
+  margin: 0 auto;
+  height: 530px;
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 160px);
+}
+
+.slide-photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    vertical-align: middle;
+
+  }
+}
+
+.processes-content {
+  height: 530px;
+  padding: 60px;
+  display: table;
+
+  p {
+    margin: 0 0 10px;
+    line-height: 25px;
+  }
+
+  h3 {
+    font-size: 34px;
+    font-family: 'montserrat';
+    margin-bottom: 20px;
+  }
+}
+
+.process-valign {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#processes #processes .processes-content p {
+  font-size: 19px;
+  margin-bottom: 25px;
+  max-width: 90%;
+}
