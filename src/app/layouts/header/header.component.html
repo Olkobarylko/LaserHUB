@@ -1,4 +1,4 @@
-<header>
+<header [style.backgroundColor]="background?'transparent':'#333'">
   <div class="center-block">
     <div class="logo">
       <a [routerLink]="[ '/home' ]">LaserHub</a>
@@ -13,7 +13,7 @@
         <a [routerLink]="[ '/blog' ]">Блог</a>
       </div>
       <div class="contacts">
-        <a [routerLink]="[ '/home' ]">Контакти</a>
+        <a [routerLink]="[ '/contacts' ]">Контакти</a>
       </div>
       <div class="store-creators">
         <a [routerLink]="[ '/home' ]">Store Creators</a>
