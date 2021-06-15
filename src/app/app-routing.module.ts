@@ -10,6 +10,11 @@ import { ServiceComponent } from './pages/service/service.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { StorecreatorsComponent } from './pages/storecreators/storecreators.component';
 
+import { AdminComponent } from './admin/admin.component';
+import { BlogsComponent } from './admin/blogs/blogs.component';
+import { OutsorcingComponent } from './admin/outsorcing/outsorcing.component';
+import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
@@ -20,6 +25,14 @@ const routes: Routes = [
   { path: 'service', component: ServiceComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'storecreators', component: StorecreatorsComponent },
+  {
+    path: 'admin', component: AdminComponent, children: [
+      { path: '', pathMatch: 'full', redirectTo: '/admin/blog' },
+      { path: 'blog', component: BlogsComponent },
+      { path: 'ousourcing', component: OutsorcingComponent },
+      { path: 'contacts', component: AdmincontactsComponent }
+    ]
+  },
 ];
 
 @NgModule({
