@@ -1,19 +1,19 @@
 <div class="mb-3">
   <div class="mb-3">
     <label for="name" class="form-label">Заголовок:</label>
-    <input type="text" class="form-control" id="name">
+    <input type="text" class="form-control" id="name" [(ngModel)]="title" name="title">
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label"> Картинка:</label>
-    <input type="text" class="form-control" id="urlName">
+    <input type="text" class="form-control" id="urlName" [(ngModel)]="image" name="image">
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label">Опис:</label>
-    <input type="text" class="form-control" id="urlName" >
+    <input type="text" class="form-control" id="urlName" [(ngModel)]="description" name="description">
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label">Більше тексту:</label>
-    <input type="text" class="form-control" id="urlName">
+    <input type="text" class="form-control" id="urlName" [(ngModel)]="moreText" name="moreText">
   </div>
 
 
@@ -34,8 +34,8 @@
     </div>
   </ng-template> -->
 
-  <button type="button" class="btn btn-success" >Add</button>
-  <button type="button" class="btn btn-primary" >Save</button>
+  <button type="button" class="btn btn-success" (click)="addBlog()">Add</button>
+  <button type="button" class="btn btn-primary">Save</button>
 </div>
 <table style="text-align: center;" class="table align-middle">
   <thead>
@@ -50,15 +50,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <button class="btn btn-warning">Редагувати</button>
+    <tr *ngFor="let blog of blogsArray,index as i">
+      <td>{{i+1}}</td>
+      <td>{{blog.title}}</td>
+      <td>{{blog.image}}</td>
+      <td>{{blog.description}}</td>
+      <td>{{blog.moreText}}</td>
+      <button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button>
       <td>
-        <button class="btn btn-danger">Видалити</button>
+        <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Видалити</button>
       </td>
     </tr>
   </tbody>
