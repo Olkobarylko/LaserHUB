@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "lazerhub-23fa1": {
+      "hosting": {
+        "LaserHUB": [
+          "lazerhub-23fa1"
+        ]
+      }
+    }
+  }
+}

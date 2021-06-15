@@ -22,6 +22,11 @@ import { BlogsComponent } from './admin/blogs/blogs.component';
 import { OutsorcingComponent } from './admin/outsorcing/outsorcing.component';
 import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +50,10 @@ import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.comp
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
