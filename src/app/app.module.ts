@@ -17,6 +17,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { StorecreatorsComponent } from './pages/storecreators/storecreators.component';
+import { AdminComponent } from './admin/admin.component';
+import { BlogsComponent } from './admin/blogs/blogs.component';
+import { OutsorcingComponent } from './admin/outsorcing/outsorcing.component';
+import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { StorecreatorsComponent } from './pages/storecreators/storecreators.comp
     GoodsComponent,
     ServiceComponent,
     ContactsComponent,
-    StorecreatorsComponent
+    StorecreatorsComponent,
+    AdminComponent,
+    BlogsComponent,
+    OutsorcingComponent,
+    AdmincontactsComponent
   ],
   imports: [
     BrowserModule,
