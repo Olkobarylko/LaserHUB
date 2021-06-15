@@ -13,6 +13,7 @@ export class BlogsComponent implements OnInit {
   image: string;
   description: string;
   moreText: string;
+  editIndex: string;
   constructor(private BlogserviceService: BlogserviceService,
     private db: AngularFirestore) {
 
@@ -84,20 +85,32 @@ export class BlogsComponent implements OnInit {
   }
 
   editBlog(id: string): void {
-    console.log(this.db.collection('blogs').doc(id));
+    for (let i = 0; i < this.blogsArray.length; i++) {
+      if (this.blogsArray[i].id == id) {
+        this.editIndex = this.blogsArray[i].id;
+        this.title = this.blogsArray[i].title;
+        this.image = this.blogsArray[i].image;
+        this.description = this.blogsArray[i].description;
+        this.moreText = this.blogsArray[i].moreText;
+      }
+    }
   }
 
-  // saveBlog(id: string): void {
-  //   this.db.collection('blogs').doc(id).update({
-  //     "id": id
-  //   }).then(() => {
-  //     console.log("Document successfully updated!");
-  //     this.blogsArray = [];
-  //     this.getBlogs();
-  //   }).catch((error) => {
-  //     console.error("Error removing document: ", error);
-  //   });
-  // }
+  saveBlog(): void {
+    this.db.collection('blogs').doc(this.editIndex).update({
+      "id": this.editIndex,
+      "title": this.title,
+      "image": this.image,
+      "description": this.description,
+      "moreText": this.moreText
+    }).then(() => {
+      console.log("Document successfully updated!");
+      this.blogsArray = [];
+      this.getBlogs();
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+  }
 
   resetForm(): void {
     this.title = '';
