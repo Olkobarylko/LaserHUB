@@ -17,18 +17,14 @@
   <p class="header-processes-p">Even though the largest portion of our production floor is covered by Lasers, a
     multitude of machines is available and highly optimised for outsourcing bulk orders.</p>
   <p class="header-processes-p smaller-size">Amongst various production areas, the ones most commonly used are:</p>
-  <div class="render-block">
-    <div class="slide-photo"><img src="https://lasergist.com/wp-content/uploads/2016/07/laser-2.jpg"
-        alt="Lasergist Laser Cutter Outsourcing"></div>
-    <div class="col-md-6 processes-content">
+  <div class="render-block" *ngFor="let out of outsourcingArray,index as i">
+    <div class="slide-photo" [style.Order]="(i%2===0)?'2':'1'"><img src="{{out.image}}"
+        alt="Lasergist Laser Cutter Outsourcing">
+    </div>
+    <div class="col-md-6 processes-content" [style.Order]="(i%2===0)?'1':'2'">
       <div class="process-valign">
-        <h3 class="processes-title">Laser Cutting</h3>
-        <p>Laser Cutting is the process of a laser beam cutting through steel in extremely precise accuracy and speed.
-          Typically found in large-scale industrial manufacturing facilities, it is the method of choice to cut complex
-          or
-          simple pieces out of sheet metal. Leftovers are minimal making it particularly efficient.</p>
-        <p>Given its precision, it can not only boost your product quality, but also allow for elements that would
-          otherwise be impossible with regular machines.</p>
+        <h3 class="processes-title">{{out.title}}</h3>
+        <p>{{out.description}}</p>
         <p></p>
       </div>
       <p></p>

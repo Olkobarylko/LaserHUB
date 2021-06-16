@@ -1,12 +1,9 @@
 <section class="section-blog">
-  <div class="block-blog">
-    <div class="post-on-blog-featured-img"
-      style="background-image: url('https://lasergist.com/wp-content/uploads/2017/04/lasergist-boat-sign-1024x569.jpg')">
+  <div class="block-blog" *ngFor="let blog of blogsArray">
+    <div class="post-on-blog-featured-img" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}">
     </div>
-    <h1 class="entry-title">Custom Boat Signs, Laser Cut in Marine-Grade Stainless Steel</h1>
-    <p>This month we are featuring one of our favorite uses of Lasergist: Boat Yacht Signs. Laser-cut in
-      Marine-Grade Stainless Steel, hand-polished, laser engraved (or not), delivered ready to be mounted on the transom
-      or the sides of any boat. This particular speedboat — which also serves as a fishing boat, the Kraken was one […]
+    <h1 class="entry-title">{{blog.title}}</h1>
+    <p>{{blog.description}} […]
     </p>
     <div style="display: flex;"><a class="continue-reading">Continue reading </a><i
         class="bi bi-caret-right arrow-right "></i></div>

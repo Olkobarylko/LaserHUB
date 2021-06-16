@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BlogserviceService } from 'src/app/shared/services/blog/blogservice.service';
 
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+
+
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
@@ -14,25 +18,15 @@ export class BlogsComponent implements OnInit {
   description: string;
   moreText: string;
   editIndex: string;
+  imageStatus: boolean;
+  uploadPercent: Observable<number>;
   constructor(private BlogserviceService: BlogserviceService,
-    private db: AngularFirestore) {
+    private db: AngularFirestore,
+    private storage: AngularFireStorage) {
 
   }
 
   ngOnInit(): void {
-    //   this.db.collection("cities").doc().delete().then(() => {
-    //     console.log("Document successfully deleted!");
-    // }).catch((error) => {
-    //     console.error("Error removing document: ", error);
-    // });
-    // this.db.collection('blogs').doc(this.user.id).update(data).then(
-    //   () => {
-    //     console.log('update proflie successs');
-    //   },
-    //   err => {
-    //     console.log(err);
-    //   });
-    // console.log(this.db.collection('blogs').get());
     this.getBlogs();
   }
 
@@ -46,6 +40,34 @@ export class BlogsComponent implements OnInit {
         console.log(this.blogsArray);
       });
     });
+  }
+
+  uploadFile(event) {
+    const file = event.target.files[0];
+    const filePath = `images/products/${file.name}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, file);
+    this.uploadPercent = task.percentageChanges();
+    task.then(image => {
+      this.storage.ref(`images/products/${image.metadata.name}`).getDownloadURL().subscribe(url => {
+        this.image = url;
+        this.imageStatus = true;
+        this.uploadPercent = null
+      });
+    });
+  }
+
+  deleteImage(image?: string): void {
+    image = image || this.image;
+    this.storage.refFromURL(image).delete().subscribe(
+      () => {
+        this.imageStatus = false;
+        this.image = '';
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 
   addBlog(): void {
@@ -69,7 +91,7 @@ export class BlogsComponent implements OnInit {
         console.error("Error removing document: ", error);
       });
     }).catch(err => console.log(err));
-
+    this.imageStatus = false;
     this.resetForm();
   }
 
@@ -110,6 +132,7 @@ export class BlogsComponent implements OnInit {
     }).catch((error) => {
       console.error("Error removing document: ", error);
     });
+    this.resetForm();
   }
 
   resetForm(): void {
