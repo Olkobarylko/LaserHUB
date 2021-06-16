@@ -1,23 +1,19 @@
 <div class="mb-3">
   <div class="mb-3">
     <label for="name" class="form-label">Заголовок:</label>
-    <input type="text" class="form-control" id="name" [(ngModel)]="title" name="title">
-  </div>
-  <div class="mb-3">
-    <label for="urlName" class="form-label"> Картинка:</label>
-    <input type="text" class="form-control" id="urlName" [(ngModel)]="image" name="image">
+    <input type="text" class="form-control" [(ngModel)]="title" name="title">
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label">Опис:</label>
-    <input type="text" class="form-control" id="urlName" [(ngModel)]="description" name="description">
+    <textarea type="text" class="form-control" [(ngModel)]="description" name="description"></textarea>
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label">Більше тексту:</label>
-    <input type="text" class="form-control" id="urlName" [(ngModel)]="moreText" name="moreText">
+    <textarea type="text" class="form-control" [(ngModel)]="moreText" name="moreText"></textarea>
   </div>
 
 
-  <!-- <ng-container *ngIf="!imageStatus; else elseTemplate">
+  <ng-container *ngIf="!imageStatus; else elseTemplate">
     <div class="custom-file">
       <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
       <label class="custom-file-label" for="urlImage">Choose file...</label>
@@ -28,11 +24,11 @@
     </div>
   </ng-container>
   <ng-template #elseTemplate>
-    <div class="image mb-3">
-      <img [src]="image" alt="" width="300px">
-      <i class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
+    <div style="display: flex;align-items: center;" class="image mb-3">
+      <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
+      <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
     </div>
-  </ng-template> -->
+  </ng-template>
 
   <button type="button" class="btn btn-success" (click)="addBlog()">Add</button>
   <button type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
@@ -53,7 +49,7 @@
     <tr *ngFor="let blog of blogsArray,index as i">
       <td>{{i+1}}</td>
       <td>{{blog.title}}</td>
-      <td>{{blog.image}}</td>
+      <td><img width="100px" alt="" src="{{blog.image}}"></td>
       <td>{{blog.description}}</td>
       <td>{{blog.moreText}}</td>
       <button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button>
