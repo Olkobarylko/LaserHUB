@@ -80,3 +80,71 @@ header {
 .nav-start {
   width: 70px;
 }
+
+.products {
+  position: relative;
+}
+
+.navbar-mini {
+  padding-top: 8px;
+  position: absolute;
+  left: -45px;
+  background-color: #1285E8;
+  color: white;
+  opacity: 0;
+  height: 90px;
+  width: 150px;
+  transition: .45s all;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      cursor: pointer;
+      position: relative;
+      width: 90px;
+    }
+
+    li::after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 0px;
+      width: 0%;
+      height: 1px;
+      background-color: white;
+      transition: all .32s ease-out;
+    }
+
+    li:hover::after {
+      content: "";
+      width: 100%;
+    }
+  }
+}
+
+.products:hover {
+  .navbar-mini {
+    opacity: 1;
+  }
+}
+
+.arrow-style {
+  position: absolute;
+  color: white;
+  top: 6px;
+  left: 50px;
+}
+
+.busket {
+  height: 45px;
+  border: 2px solid #1285E8;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  i{
+    margin-right: 4px;
+    font-size: 20px;
+  }
+}

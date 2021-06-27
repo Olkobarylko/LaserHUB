@@ -4,12 +4,13 @@
       <div class="col">
         <div class="d-flex align-items-start">
           <div class="nav flex-column nav-pills me-3">
-            <button [routerLink]="[ 'blog' ]" routerLinkActive="active" class="nav-link"
-              type="button">BLOG</button>
+            <button [routerLink]="[ 'blog' ]" routerLinkActive="active" class="nav-link" type="button">BLOG</button>
             <button [routerLink]="[ 'ousourcing' ]" routerLinkActive="active" class="nav-link"
               type="button">OUTSOURCE</button>
             <button [routerLink]="[ 'contacts' ]" routerLinkActive="active" class="nav-link"
               type="button">CONTACTS</button>
+            <button [routerLink]="[ 'products' ]" routerLinkActive="active" class="nav-link"
+              type="button">PRODUCTS</button>
           </div>
           <div class="tab-content col-10" id="v-pills-tabContent">
             <router-outlet></router-outlet>

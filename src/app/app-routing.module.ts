@@ -13,7 +13,14 @@ import { StorecreatorsComponent } from './pages/storecreators/storecreators.comp
 import { AdminComponent } from './admin/admin.component';
 import { BlogsComponent } from './admin/blogs/blogs.component';
 import { OutsorcingComponent } from './admin/outsorcing/outsorcing.component';
-import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component';
+import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component'; 
+import { LasercutComponent } from './pages/goods/lasercut/lasercut.component';
+import { GardencubeComponent } from './pages/goods/gardencube/gardencube.component';
+import { LoftfurnitureComponent } from './pages/goods/loftfurniture/loftfurniture.component';
+import { ProductsComponent } from './admin/products/products.component';
+import { ProductdesriptionComponent } from './pages/productdesription/productdesription.component';
+import { BasketComponent } from './pages/basket/basket.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -22,14 +29,21 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'create', component: CreateComponent },
   { path: 'products', component: GoodsComponent },
+  { path: 'lasercut', component: LasercutComponent },
+  { path: 'gardencube', component: GardencubeComponent },
+  { path: 'loftfurniture', component: LoftfurnitureComponent },
+  { path: 'basket', component: BasketComponent },
   { path: 'service', component: ServiceComponent },
   { path: 'contacts', component: ContactsComponent },
+  { path: 'products/:id', component: ProductdesriptionComponent },
+
   { path: 'storecreators', component: StorecreatorsComponent },
   {
     path: 'admin', component: AdminComponent, children: [
       { path: '', pathMatch: 'full', redirectTo: '/admin/blog' },
       { path: 'blog', component: BlogsComponent },
       { path: 'ousourcing', component: OutsorcingComponent },
+      { path: 'products', component: ProductsComponent },
       { path: 'contacts', component: AdmincontactsComponent }
     ]
   },

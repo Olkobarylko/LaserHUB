@@ -1,0 +1,25 @@
+<section class="description-section">
+  <div class="main-block">
+    <div class="main-image">
+      <img src="{{oneProm.image}}">
+    </div>
+    <div class="main-info">
+      <h2>{{oneProm.title}}</h2>
+      <h3>Prize : {{oneProm.prize}} $</h3>
+      <h4>Sizes : </h4>
+      <span *ngFor="let size of oneProm.size , index as i"><input type="radio" name="options" class="btn-check" id="btn-check-{{i}}-outlined" autocomplete="off">
+        <label class="btn btn-outline-secondary" for="btn-check-{{i}}-outlined">{{size}}</label></span>
+      <h4>Quantity: </h4>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-secondary" (click)="changeProductCount(oneProm,false)">-</button>
+        <button type="button" class="btn btn-outline-secondary">{{oneProm.count}}</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="changeProductCount(oneProm,true)">+</button>
+      </div><br>
+      <div class="busket">
+        <a (click)="addToBusket(oneProm)">Add to busket</a>
+      </div>
+      <p>{{oneProm.description}}</p>
+    </div>
+
+  </div>
+</section>
