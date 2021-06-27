@@ -1,0 +1,84 @@
+.description-section {
+  padding-top: 160px;
+  background-color: rgb(238, 237, 237);
+  height: 90vh;
+}
+
+.main-block {
+  margin: 0px auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+
+  .main-image {
+    background-color: rgb(238, 237, 237);
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+
+    img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60vh;
+    }
+  }
+
+  .main-info {
+    padding-top: 3%;
+    background-color: rgb(238, 237, 237);
+    width: 50%;
+    text-align: left;
+    padding-left: 3%;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    h2 {
+      font-size: 38px;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: rgb(106, 106, 106);
+      font-size: 17px;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.65;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    p {
+      margin-top: 40px;
+      padding-right: 30%;
+    }
+  }
+}
+
+.busket {
+  padding-top: 20px;
+
+  a {
+    cursor: pointer;
+    line-height: 55px;
+    width: 150px;
+    height: 60px;
+    display: block;
+    background: transparent;
+    padding: 0px 22px;
+    color: black;
+    border: 2px solid black;
+    transition: all .32s ease-out;
+  }
+
+  a:hover {
+    text-decoration: none;
+    background: #1285E8;
+    border-color: white;
+    color: white;
+  }
+}

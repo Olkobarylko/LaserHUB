@@ -7,6 +7,14 @@
       <div class="nav-start">
         <div class="products">
           <a [routerLink]="[ '/products' ]">Товари</a>
+          <i class="bi bi-arrow-down-short arrow-style"></i>
+          <div class="navbar-mini">
+            <ul>
+              <li [routerLink]="[ '/lasercut' ]">laser cutting</li>
+              <li [routerLink]="[ '/gardencube' ]">garden cube</li>
+              <li [routerLink]="[ '/loftfurniture' ]">loft furniture</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="blog">
@@ -18,9 +26,8 @@
       <div class="store-creators">
         <a [routerLink]="[ '/storecreators' ]">Store Creators</a>
       </div>
-      <div class="create">
-        <a [routerLink]="[ '/create' ]">Create</a>
-      </div>
+      <div class="busket" [routerLink]="[ '/basket' ]"><i class="bi bi-cart"></i> <span class="woocommerce-Price-amount amount"><span
+            class="woocommerce-Price-currencySymbol">$</span>{{totalPrice}}</span></div>
     </div>
   </div>
 </header>

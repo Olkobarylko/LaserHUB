@@ -1,1 +1,14 @@
-<p>admincontacts works!</p>
+<section style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
+  <div *ngFor="let contact of contactsArray" class="card" style="width: 18rem;margin-left: 30px;">
+    <div class="card-body">
+      <h5 class="card-title">Name : {{contact.firstName}}</h5>
+      <p class="card-text">Message : {{contact.message}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Subject : {{contact.subject}}</li>
+      <li class="list-group-item">Email : {{contact.email}}</li>
+      <button class="btn btn-danger" (click)="deleteContact(contact.id)">Delete contact</button>
+    </ul>
+
+  </div>
+</section>

@@ -1,28 +1,22 @@
-<section id="contact-us">
+<section class="contact-us">
   <h1>get in touch<span>.</span></h1>
 </section>
 <section class="form-section">
   <div class="first-block-form">
     <div class="form-block">
       <span class="form-label-on">Name</span>
-      <input type="text">
+      <input type="text" [(ngModel)]="firstName" name="firstName" (ngModelChange)="onChangeName($event)">
     </div>
     <div class="form-block"><span class="form-label-on">Email</span>
-      <input type="text"></div>
+      <input type="text" [(ngModel)]="email" name="email" (ngModelChange)="onChangeEmail($event)"></div>
   </div>
   <div class="big-block-form">
     <span>SUBJECT</span>
-    <input type="text">
+    <input type="text" [(ngModel)]="subject" name="subject">
   </div>
   <div class="big-block-form">
     <span>Message</span>
-    <textarea></textarea>
+    <textarea [(ngModel)]="message" name="message"></textarea>
   </div>
-  <iframe title="reCAPTCHA"
-    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Le8zucUAAAAALX-WompLKlgnuJRsFJpDVEIsafg&amp;co=aHR0cHM6Ly9sYXNlcmdpc3QuY29tOjQ0Mw..&amp;hl=uk&amp;v=6OAif-f8nYV0qSFmq-D6Qssr&amp;size=normal&amp;cb=h6supgi69mcg"
-    width="304" height="78" role="presentation" name="a-4ji0km6naaty" frameborder="0" scrolling="no"
-    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-    <div class="g-recaptcha" data-sitekey="6LeKaREUAAAAALB6Sgjp5XqHq0Kb_aLEn_KORz6u"></div>
-  <button>SEND</button>
+  <button (click)="addContact()" [disabled]='!checkNameEmailDis' [ngClass]="{'grey-btn': !checkNameEmailDis}">SEND</button>
 </section>
- <script src='https://www.google.com/recaptcha/api.js'></script>    

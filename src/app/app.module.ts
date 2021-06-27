@@ -26,6 +26,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
+import { LasercutComponent } from './pages/goods/lasercut/lasercut.component';
+import { GardencubeComponent } from './pages/goods/gardencube/gardencube.component';
+import { LoftfurnitureComponent } from './pages/goods/loftfurniture/loftfurniture.component';
+import { ProductsComponent } from './admin/products/products.component';
+import { ProductdesriptionComponent } from './pages/productdesription/productdesription.component';
+import { BasketComponent } from './pages/basket/basket.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +50,13 @@ import { environment } from '../environments/environment';
     AdminComponent,
     BlogsComponent,
     OutsorcingComponent,
-    AdmincontactsComponent
+    AdmincontactsComponent,
+    LasercutComponent,
+    GardencubeComponent,
+    LoftfurnitureComponent,
+    ProductsComponent,
+    ProductdesriptionComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

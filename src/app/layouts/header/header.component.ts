@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { BasketService } from 'src/app/shared/services/basket.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,11 @@ import { filter } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
   background: boolean = true;
   checkBack: boolean = true;
-  constructor(private router: Router) {
+  basket: Array<any> = [];
+  totalPrice = 0;
+  constructor(private router: Router, private basketService: BasketService) {
+    this.checkBasket();
+    this.getLocalStotage();
   }
 
   ngOnInit(): void {
@@ -39,6 +44,20 @@ export class HeaderComponent implements OnInit {
       this.background = true;
     }
 
+  }
+  checkBasket(): void {
+    this.basketService.changeBusket$.subscribe(() => {
+      this.getLocalStotage();
+    })
+  }
+  getLocalStotage(): void {
+    if (localStorage.getItem('basket')) {
+      this.basket = JSON.parse(localStorage.getItem('basket'));
+      this.getTotal();
+    }
+  }
+  getTotal(): void {
+    this.totalPrice = this.basket.reduce((total, prod) => total + (prod.prize * prod.count), 0)
   }
 
 }
