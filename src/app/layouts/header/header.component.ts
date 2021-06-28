@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   checkBack: boolean = true;
   basket: Array<any> = [];
   totalPrice = 0;
+  checkBurger: boolean;
   constructor(private router: Router, private basketService: BasketService) {
     this.checkBasket();
     this.getLocalStotage();
@@ -59,5 +60,7 @@ export class HeaderComponent implements OnInit {
   getTotal(): void {
     this.totalPrice = this.basket.reduce((total, prod) => total + (prod.newPrice * prod.count), 0)
   }
-
+  hideBurger(): void {
+    this.checkBurger = false;
+  }
 }

@@ -13,6 +13,7 @@
               type="button">PRODUCTS</button>
               <button [routerLink]="[ 'orders' ]" routerLinkActive="active" class="nav-link"
               type="button">ORDERS</button>
+              <button [routerLink]="[ '/home' ]" type="button" class="btn btn-warning" (click)="signOut()">Вийти</button>
           </div>
           <div class="tab-content col-10" id="v-pills-tabContent">
             <router-outlet></router-outlet>

@@ -30,12 +30,12 @@
           class="woocommerce-Price-amount amount"><span
             class="woocommerce-Price-currencySymbol">$</span>{{totalPrice}}</span></div>
       <div class="hamburger-menu">
-        <input id="menutoggle" type="checkbox">
+        <input id="menutoggle" type="checkbox" [(ngModel)]="checkBurger" name="checkBurger">
         <label class="menubtn" for="menutoggle">
           <span></span>
         </label>
-        <ul class="menubox">
-          <li><a class="menuitem" [routerLink]="[ '/blog']" >Блог</a></li>
+        <ul class="menubox" (click)="hideBurger()">
+          <li><a class="menuitem" [routerLink]="[ '/blog']">Блог</a></li>
           <hr>
           <li><a class="menuitem" [routerLink]="[ '/contacts']">Контакти</a></li>
           <hr>
