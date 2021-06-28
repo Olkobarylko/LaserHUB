@@ -256,11 +256,12 @@ header {
   text-decoration: none;
   transition-duration: .25s;
 }
-.center-block .phone{
+
+.center-block .phone {
   display: none;
 }
 
-.center-block .menubox a::after{
+.center-block .menubox a::after {
   top: 50px;
 }
 
@@ -295,16 +296,24 @@ header {
 }
 
 @media screen and (max-width: 478px) {
-  header{
+  header {
     padding: 0px 20px;
   }
-  .nav-start{
+
+  .nav-start {
     display: none;
   }
-  .nav-end{
+
+  .nav-end {
     margin-right: 40px;
   }
-  .center-block .phone{
-    display: block;
+
+  .center-block {
+    .logo .logoText {
+      font-size: 24px;
+    }
+    .phone {
+      display: block;
+    }
   }
 }

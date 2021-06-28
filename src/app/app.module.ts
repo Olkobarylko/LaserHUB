@@ -31,6 +31,7 @@ import { ProductdesriptionComponent } from './pages/productdesription/productdes
 import { BasketComponent } from './pages/basket/basket.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { BlogdescriptionComponent } from './pages/blogdescription/blogdescription.component';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { BlogdescriptionComponent } from './pages/blogdescription/blogdescriptio
     ProductdesriptionComponent,
     BasketComponent,
     OrdersComponent,
-    BlogdescriptionComponent
+    BlogdescriptionComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,

@@ -8,14 +8,14 @@ import { BasketService } from 'src/app/shared/services/basket.service';
   styleUrls: ['./basket.component.scss']
 })
 export class BasketComponent implements OnInit {
-  basket: Array<any> = [];
+  basket: any = [];
   checkBasketBoolean: boolean;
   totalPrice: string;
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  note: string;
+  firstName: string = null;
+  lastName: string = null;
+  phone: string = null;
+  email: string = null;
+  note: string = null;
   constructor(private BasketService: BasketService,
     private db: AngularFirestore) { }
 

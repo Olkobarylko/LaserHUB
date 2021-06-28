@@ -10,7 +10,7 @@ import { StorecreatorsComponent } from './pages/storecreators/storecreators.comp
 import { AdminComponent } from './admin/admin.component';
 import { BlogsComponent } from './admin/blogs/blogs.component';
 import { OutsorcingComponent } from './admin/outsorcing/outsorcing.component';
-import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component'; 
+import { AdmincontactsComponent } from './admin/admincontacts/admincontacts.component';
 import { LasercutComponent } from './pages/goods/lasercut/lasercut.component';
 import { GardencubeComponent } from './pages/goods/gardencube/gardencube.component';
 import { LoftfurnitureComponent } from './pages/goods/loftfurniture/loftfurniture.component';
@@ -19,6 +19,8 @@ import { ProductdesriptionComponent } from './pages/productdesription/productdes
 import { BasketComponent } from './pages/basket/basket.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { BlogdescriptionComponent } from './pages/blogdescription/blogdescription.component';
+import { GuardGuard } from './shared/guard/guard.guard';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -29,13 +31,14 @@ const routes: Routes = [
   { path: 'gardencube', component: GardencubeComponent },
   { path: 'loftfurniture', component: LoftfurnitureComponent },
   { path: 'basket', component: BasketComponent },
+  { path: 'adminlogin', component: AdminloginComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'products/:id', component: ProductdesriptionComponent },
   { path: 'blog/:id', component: BlogdescriptionComponent },
 
   { path: 'storecreators', component: StorecreatorsComponent },
   {
-    path: 'admin', component: AdminComponent, children: [
+    path: 'admin', component: AdminComponent, canActivate: [GuardGuard], children: [
       { path: '', pathMatch: 'full', redirectTo: '/admin/blog' },
       { path: 'blog', component: BlogsComponent },
       { path: 'ousourcing', component: OutsorcingComponent },

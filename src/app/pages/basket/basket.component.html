@@ -1,7 +1,7 @@
 <section class="basket-section">
   <div class="left-main-block">
     <h3>Billing & Shipping</h3>
-    <div style="display: flex;">
+    <div class="mini-wrapper" style="display: flex;">
       <div class="mini-block-input"><label class="">FIRST NAME*</label>
         <input type="text" [(ngModel)]="firstName" name="firstName" class="input-text"></div>
       <div class="mini-block-input"><label class="">LAST NAME*</label>
@@ -19,29 +19,29 @@
     <div class="table">
       <div class="t-head">
         <span>Product</span>
-        <span>Total</span>
+        <span style="margin-left: 40px;">Total</span>
       </div>
       <div class="tbody">
         <div class="block-prod" *ngFor="let prod of basket">
-          <div class="mini-block" >
-            <p>{{prod.title}}</p>
-            <p class="bold-p">Price: <span>${{prod.newPrice}}</span></p>
-            <p class="bold-p">Quantity: <span>{{prod.count}}</span></p>
-          </div>
           <div class="mini-block">
-            <p style="margin-top: 30px;font-size: 26px;">${{prod.newPrice*prod.count}}</p>
+            <p style="font-size: 19px;">{{prod.title}}</p>
+            <p class="bold-p">Quantity: <span>{{prod.count}}</span></p>
+            <p class="bold-p">Price: <span>${{prod.newPrice}}</span></p>
+          </div>
+          <div class="mini-block right">
+            <p style="margin-top: 30px;font-size: 24px;">${{prod.newPrice*prod.count}}</p>
             <i (click)="deleteProd(prod)" class="bi bi-x"></i>
           </div>
         </div>
       </div>
       <div class="t-footer">
-        <span>Total</span>
+        <span>Total price:</span>
         <span>${{totalPrice}}</span>
       </div>
     </div>
     <div style="display: flex;justify-content: flex-end;"><button type="submit" class="button alt"
-        name="woocommerce_checkout_place_order" id="place_order" value="Place order"
-        data-value="Place order" (click)="addOrder()">Order</button></div>
+        name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order"
+        (click)="addOrder()">Order</button></div>
   </div>
 
 </section>

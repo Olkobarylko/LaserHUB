@@ -71,3 +71,29 @@
 .product-item:hover .button {
   background: #1285E8;
 }
+
+@media screen and (max-width: 1300px) {
+  .block-products {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .product-item {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .block-products {
+    width: 90%;
+
+  }
+
+  .product-item {
+    width: 80%;
+    margin-left: 2%;
+  }
+}
