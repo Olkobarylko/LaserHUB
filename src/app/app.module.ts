@@ -30,6 +30,7 @@ import { ProductsComponent } from './admin/products/products.component';
 import { ProductdesriptionComponent } from './pages/productdesription/productdesription.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { OrdersComponent } from './admin/orders/orders.component';
+import { BlogdescriptionComponent } from './pages/blogdescription/blogdescription.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { OrdersComponent } from './admin/orders/orders.component';
     ProductsComponent,
     ProductdesriptionComponent,
     BasketComponent,
-    OrdersComponent
+    OrdersComponent,
+    BlogdescriptionComponent
   ],
   imports: [
     BrowserModule,

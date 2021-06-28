@@ -18,6 +18,7 @@ import { ProductsComponent } from './admin/products/products.component';
 import { ProductdesriptionComponent } from './pages/productdesription/productdesription.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { OrdersComponent } from './admin/orders/orders.component';
+import { BlogdescriptionComponent } from './pages/blogdescription/blogdescription.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'basket', component: BasketComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'products/:id', component: ProductdesriptionComponent },
+  { path: 'blog/:id', component: BlogdescriptionComponent },
 
   { path: 'storecreators', component: StorecreatorsComponent },
   {
