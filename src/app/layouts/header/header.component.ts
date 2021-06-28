@@ -57,7 +57,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   getTotal(): void {
-    this.totalPrice = this.basket.reduce((total, prod) => total + (prod.prize * prod.count), 0)
+    this.totalPrice = this.basket.reduce((total, prod) => total + (prod.newPrice * prod.count), 0)
   }
 
 }

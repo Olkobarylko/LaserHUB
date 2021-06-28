@@ -1,0 +1,36 @@
+.section-goods {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.main-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-block {
+  padding-top: 10%;
+  width: 30%;
+  margin-bottom: 40px;
+  cursor: pointer;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  p {
+    padding-top: 10px;
+    text-align: center;
+    background-color: rgb(238, 237, 237);
+    padding-bottom: 10px;
+    transition: .35s all;
+  }
+
+
+}
+
+.mini-block:hover p {
+  color: #1285E8;
+}

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductsComponent implements OnInit {
   productsArray: any = [];
-  sizeArr: any = [];
+  sizeArray: any = [];
   category: string = 'laser';
   title: string;
   image: string;
@@ -68,16 +68,16 @@ export class ProductsComponent implements OnInit {
   }
 
   addBlog(): void {
-    this.sizeArr = this.size.split(' ');
+
     const user = {
       category: this.category,
       title: this.title,
       image: this.image,
       description: this.description,
-      prize: this.prize,
-      size: this.sizeArr,
+      sizeArray: this.sizeArray,
       id: null,
       count: this.count,
+      newPrice: null,
       date: new Date()
     }
     this.db.collection('products').add(user).then(myUser => {
@@ -140,12 +140,25 @@ export class ProductsComponent implements OnInit {
     this.resetForm();
   }
 
+  addSize(): void {
+    const size = {
+      size: this.size,
+      prise: this.prize
+    }
+    this.sizeArray.push(size);
+    this.prize = '';
+    this.size = '';
+    console.log(this.sizeArray);
+
+  }
+
   resetForm(): void {
     this.title = '';
     this.image = '';
     this.description = '';
     this.prize = '';
     this.size = '';
-    this.category = 'laser'
+    this.category = 'laser';
+    this.sizeArray = [];
   }
 }

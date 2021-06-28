@@ -32,6 +32,7 @@ import { LoftfurnitureComponent } from './pages/goods/loftfurniture/loftfurnitur
 import { ProductsComponent } from './admin/products/products.component';
 import { ProductdesriptionComponent } from './pages/productdesription/productdesription.component';
 import { BasketComponent } from './pages/basket/basket.component';
+import { OrdersComponent } from './admin/orders/orders.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { BasketComponent } from './pages/basket/basket.component';
     LoftfurnitureComponent,
     ProductsComponent,
     ProductdesriptionComponent,
-    BasketComponent
+    BasketComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

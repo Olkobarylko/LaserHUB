@@ -1,0 +1,17 @@
+<section style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
+  <div *ngFor="let order of ordersArray" class="card" style="width: 18rem;margin-left: 30px;">
+    <div class="card-body">
+      <h5 class="card-title">First Name : {{order.firstName}}</h5>
+      <p class="card-text">Last Name : {{order.lastName}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Phone : {{order.phone}}</li>
+      <li class="list-group-item">Email : {{order.email}}</li>
+      <li *ngFor="let basket of order.basket" class="list-group-item"><img src="{{basket.image}}" ><br>  Name Product : {{basket.title}} <br> Price
+        Product: ${{basket.newPrice}} <br> Count Product: {{basket.count}} <br> Total Price : ${{basket.newPrice * basket.count}}</li>
+      <li class="list-group-item">Note : {{order.note}}</li>
+      <button class="btn btn-danger" (click)="deleteOrder(order.id)">Delete Order</button>
+    </ul>
+
+  </div>
+</section>

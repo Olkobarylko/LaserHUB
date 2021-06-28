@@ -9,19 +9,21 @@ import { BasketService } from 'src/app/shared/services/basket.service';
   styleUrls: ['./productdesription.component.scss']
 })
 export class ProductdesriptionComponent implements OnInit {
-  oneProm: any = {};
+  oneProd: any = {};
+  price: any;
   constructor(private ActiveRoute: ActivatedRoute,
     private db: AngularFirestore,
     private busketService: BasketService) { }
 
   ngOnInit(): void {
     this.renderOneProm();
+
   }
   renderOneProm(): void {
     const ID = this.ActiveRoute.snapshot.paramMap.get('id');
     this.db.collection("products").doc(ID).get().subscribe((doc) => {
-      this.oneProm = doc.data();
-      console.log(this.oneProm);
+      this.oneProd = doc.data();
+      this.price = this.oneProd.sizeArray[0].prise;
 
     })
   }
@@ -37,8 +39,13 @@ export class ProductdesriptionComponent implements OnInit {
   }
 
   addToBusket(prod: any): void {
+    prod.newPrice = this.price;
     this.busketService.addLocalBasket(prod);
     this.busketService.changeBusket$.next(true);
     prod.count = 1;
+  }
+
+  addPrice(i: number): void {
+    this.price = this.oneProd.sizeArray[i].prise;
   }
 }
