@@ -1,12 +1,13 @@
 .description-section {
   padding-top: 160px;
+  padding-bottom: 100px;
   background-color: rgb(238, 237, 237);
-  height: 90vh;
+
 }
 
 .main-block {
   margin: 0px auto;
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
 
@@ -15,6 +16,7 @@
     width: 50%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
     img {
       background-size: cover;
@@ -80,5 +82,35 @@
     background: #1285E8;
     border-color: white;
     color: white;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .description-section {
+    padding-top: 80px;
+
+  }
+
+  .main-block {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .main-info {
+      width: 80%;
+      p {
+        margin-top: 30px;
+        padding-right: 5%;
+      }
+    }
+    .main-image {
+      width: 70%;
+    }
   }
 }

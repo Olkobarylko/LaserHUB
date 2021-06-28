@@ -40,3 +40,28 @@ ul.footer-links li:not(:last-of-type)::after{
     content: "|";
     margin-left: 10px;
 }
+
+@media screen and (max-width: 600px){
+    .site-info {
+        font-size: 10px;
+        padding-left: 5%;
+    }
+    ul.footer-links li, ul.footer-links li a {
+        font-size: 10px;
+    }
+    ul, ol {
+        margin-top: -5px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    ul.footer-links li {
+        display: inline;
+        margin-left: 6px;
+    }
+    
+    ul.footer-links li:not(:last-of-type)::after{
+        content: "|";
+        margin-left: 6px;
+    }
+}

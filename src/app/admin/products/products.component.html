@@ -1,6 +1,6 @@
 <div class="mb-3">
   <div class="mb-3">
-    <label for="name" class="form-label">Заголовок:</label>
+    <label for="name" class="form-label">Категорія:</label>
     <select class="form-select" [(ngModel)]="category" name="category">
       <option value="laser">laser cutting</option>
       <option value="garden">garden cube</option>
@@ -43,8 +43,8 @@
     </div>
   </ng-template>
 
-  <button type="button" class="btn btn-success" (click)="addBlog()">Add</button>
-  <button type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
+  <button *ngIf="!editStatus" type="button" class="btn btn-success" (click)="addBlog()">Add</button>
+  <button *ngIf="editStatus" type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
 </div>
 <table style="text-align: center;" class="table align-middle">
   <thead>
@@ -54,8 +54,6 @@
       <th scope="col">Заголовок</th>
       <th scope="col">Картинка</th>
       <th scope="col">Опис</th>
-      <th scope="col">Ціна</th>
-      <th scope="col">Розміра</th>
       <th scope="col">Редагувати</th>
       <th scope="col">Видалити</th>
     </tr>
@@ -67,8 +65,6 @@
       <td>{{blog.title}}</td>
       <td><img width="100px" alt="" src="{{blog.image}}"></td>
       <td>{{blog.description}}</td>
-      <td>{{blog.prize}}</td>
-      <td>{{blog.size}}</td>
       <td><button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button></td>
       <td>
         <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Видалити</button>

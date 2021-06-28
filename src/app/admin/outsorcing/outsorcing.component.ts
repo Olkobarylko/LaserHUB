@@ -17,6 +17,7 @@ export class OutsorcingComponent implements OnInit {
   moreText: string;
   editIndex: string;
   imageStatus: boolean;
+  editStatus: boolean;
   uploadPercent: Observable<number>;
   constructor(private db: AngularFirestore,
     private storage: AngularFireStorage) {
@@ -108,6 +109,8 @@ export class OutsorcingComponent implements OnInit {
         this.title = this.outsourcingArray[i].title;
         this.image = this.outsourcingArray[i].image;
         this.description = this.outsourcingArray[i].description;
+        this.imageStatus = true;
+        this.editStatus = true;
       }
     }
   }
@@ -125,6 +128,8 @@ export class OutsorcingComponent implements OnInit {
     }).catch((error) => {
       console.error("Error removing document: ", error);
     });
+    this.imageStatus = false;
+    this.editStatus = false;
     this.resetForm();
   }
 
