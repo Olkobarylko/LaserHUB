@@ -10,12 +10,17 @@ header {
   transition: all .35s;
 }
 
+
 .center-block {
   height: 40px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .logo a {
+    font-size: 28px;
+  }
 
   a {
     display: block;
@@ -26,7 +31,7 @@ header {
     position: relative;
   }
 
-  a::after {
+  a:not(.logoText)::after {
     content: "";
     position: absolute;
     top: 25px;
@@ -143,8 +148,148 @@ header {
   font-size: 14px;
   color: #fff;
   cursor: pointer;
-  i{
+
+  i {
     margin-right: 4px;
     font-size: 20px;
+  }
+}
+
+.hamburger-menu {
+  display: none;
+  position: relative;
+}
+
+#menutoggle {
+  opacity: 0;
+}
+
+#menutoggle:checked~.menubtn>span {
+  transform: rotate(45deg);
+}
+
+#menutoggle:checked~.menubtn>span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menutoggle:checked~.menubtn>span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menutoggle:checked~.menubox {
+  visibility: visible;
+  left: 0;
+}
+
+.empty-block {
+  display: none;
+  width: 100%;
+}
+
+.menubtn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 3px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menubtn>span,
+.menubtn>span::before,
+.menubtn>span::after {
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: #ffffff;
+
+  transition-duration: .25s;
+}
+
+.menubtn>span::before {
+  content: '';
+  top: -8px;
+}
+
+.menubtn>span::after {
+  content: '';
+  top: 8px;
+}
+
+.menubox {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0px;
+  left: -100%;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  margin: 0;
+  padding-top: 100px;
+  list-style: none;
+  background-color: black;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  opacity: 0.8;
+  transition-duration: .25s;
+
+  hr {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 255, 255);
+    height: 2px;
+  }
+}
+
+.menu__item {
+  display: block;
+  padding: 0px 0px;
+  font-size: 14px;
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.active-burger {
+  color: red;
+}
+
+@media screen and (max-width: 1040px) {
+
+  .blog,
+  .contacts,
+  .store-creators {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  header {
+    padding: 0 60px;
+  }
+
+  .nav-end {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .busket {
+    margin-left: 20px;
+  }
+
+  .nav-start {
+    margin-right: 20px;
   }
 }

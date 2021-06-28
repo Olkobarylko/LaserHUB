@@ -1,7 +1,7 @@
 <header [style.backgroundColor]="background?'transparent':'#333'">
   <div class="center-block">
     <div class="logo">
-      <a [routerLink]="[ '/home' ]">LaserHUB</a>
+      <a class="logoText" [routerLink]="[ '/home' ]">LaserHUB</a>
     </div>
     <div class="nav-end">
       <div class="nav-start">
@@ -26,8 +26,22 @@
       <div class="store-creators">
         <a [routerLink]="[ '/storecreators' ]">Store Creators</a>
       </div>
-      <div class="busket" [routerLink]="[ '/basket' ]"><i class="bi bi-cart"></i> <span class="woocommerce-Price-amount amount"><span
+      <div class="busket" [routerLink]="[ '/basket' ]"><i class="bi bi-cart"></i> <span
+          class="woocommerce-Price-amount amount"><span
             class="woocommerce-Price-currencySymbol">$</span>{{totalPrice}}</span></div>
+      <div class="hamburger-menu">
+        <input id="menutoggle" type="checkbox">
+        <label class="menubtn" for="menutoggle">
+          <span></span>
+        </label>
+        <ul class="menubox">
+          <li><a class="menuitem" [routerLink]="[ '/blog']" >Блог</a></li>
+          <hr>
+          <li><a class="menuitem" [routerLink]="[ '/contacts']">Контакти</a></li>
+          <hr>
+          <li><a class="menuitem" [routerLink]="[ '/storecreators']">Store Creators</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

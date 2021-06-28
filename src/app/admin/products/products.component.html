@@ -1,76 +1,78 @@
 <div class="mb-3">
-    <div class="mb-3">
-        <label for="name" class="form-label">Заголовок:</label>
-        <select class="form-select" [(ngModel)]="category" name="category">
-            <option value="laser">laser cutting</option>
-            <option value="garden">garden cube</option>
-            <option value="loft">loft furniture</option>
-        </select>
-      </div>
-    <div class="mb-3">
-      <label for="name" class="form-label">Заголовок:</label>
-      <input type="text" class="form-control" [(ngModel)]="title" name="title">
-    </div>
-    <div class="mb-3">
-      <label for="urlName" class="form-label">Опис:</label>
-      <textarea type="text" class="form-control" [(ngModel)]="description" name="description"></textarea>
-    </div>
-    <div class="mb-3">
-      <label for="urlName" class="form-label">Ціна:</label>
-      <input type="text" class="form-control" [(ngModel)]="prize" name="prize">
-    </div>
-    <div class="mb-3">
-        <label for="urlName" class="form-label">Розміра:</label>
-        <input type="text" class="form-control" [(ngModel)]="size" name="size">
-      </div>
-    <ng-container *ngIf="!imageStatus; else elseTemplate">
-      <div class="custom-file">
-        <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
-        <label class="custom-file-label" for="urlImage">Choose file...</label>
-      </div>
-      <div class="progress mt-3 mb-3">
-        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-          [style.width]="(uploadPercent | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    </ng-container>
-    <ng-template #elseTemplate>
-      <div style="display: flex;align-items: center;" class="image mb-3">
-        <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
-        <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
-      </div>
-    </ng-template>
-  
-    <button type="button" class="btn btn-success" (click)="addBlog()">Add</button>
-    <button type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
+  <div class="mb-3">
+    <label for="name" class="form-label">Заголовок:</label>
+    <select class="form-select" [(ngModel)]="category" name="category">
+      <option value="laser">laser cutting</option>
+      <option value="garden">garden cube</option>
+      <option value="loft">loft furniture</option>
+    </select>
   </div>
-  <table style="text-align: center;" class="table align-middle">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Категорія</th>
-        <th scope="col">Заголовок</th>
-        <th scope="col">Картинка</th>
-        <th scope="col">Опис</th>
-        <th scope="col">Ціна</th>
-        <th scope="col">Розміра</th>
-        <th scope="col">Редагувати</th>
-        <th scope="col">Видалити</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let blog of productsArray,index as i">
-        <td>{{i+1}}</td>
-        <td>{{blog.category}}</td>
-        <td>{{blog.title}}</td>
-        <td><img width="100px" alt="" src="{{blog.image}}"></td>
-        <td>{{blog.description}}</td>
-        <td>{{blog.prize}}</td>
-        <td>{{blog.size}}</td>
-        <td><button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button></td>
-        <td>
-          <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Видалити</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <div class="mb-3">
+    <label for="name" class="form-label">Заголовок:</label>
+    <input type="text" class="form-control" [(ngModel)]="title" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="urlName" class="form-label">Опис:</label>
+    <textarea type="text" class="form-control" [(ngModel)]="description" name="description"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="urlName" class="form-label">Ціна:</label>
+    <input type="text" class="form-control" [(ngModel)]="prize" name="prize">
+  </div>
+  <div class="mb-3">
+    <label for="urlName" class="form-label">Розмір:</label>
+    <input type="text" class="form-control" [(ngModel)]="size" name="size">
+  </div>
+  <button style="margin-bottom: 10px;" type="button" class="btn btn-secondary" (click)="addSize()">Додати ціну за
+    розмір</button>
+  <p *ngFor="let size of sizeArray">Розмір : {{size.size}} - <span>Ціна :{{size.prise}}</span></p>
+  <ng-container *ngIf="!imageStatus; else elseTemplate">
+    <div class="custom-file">
+      <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
+      <label class="custom-file-label" for="urlImage">Choose file...</label>
+    </div>
+    <div class="progress mt-3 mb-3">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+        [style.width]="(uploadPercent | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div style="display: flex;align-items: center;" class="image mb-3">
+      <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
+      <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
+    </div>
+  </ng-template>
+
+  <button type="button" class="btn btn-success" (click)="addBlog()">Add</button>
+  <button type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
+</div>
+<table style="text-align: center;" class="table align-middle">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Категорія</th>
+      <th scope="col">Заголовок</th>
+      <th scope="col">Картинка</th>
+      <th scope="col">Опис</th>
+      <th scope="col">Ціна</th>
+      <th scope="col">Розміра</th>
+      <th scope="col">Редагувати</th>
+      <th scope="col">Видалити</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blog of productsArray,index as i">
+      <td>{{i+1}}</td>
+      <td>{{blog.category}}</td>
+      <td>{{blog.title}}</td>
+      <td><img width="100px" alt="" src="{{blog.image}}"></td>
+      <td>{{blog.description}}</td>
+      <td>{{blog.prize}}</td>
+      <td>{{blog.size}}</td>
+      <td><button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button></td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Видалити</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

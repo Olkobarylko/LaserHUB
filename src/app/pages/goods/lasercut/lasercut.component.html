@@ -1,11 +1,10 @@
-<h2 class="h2-super">Garden Cube.</h2>
+<h2 class="h2-super">Laser Cutting.</h2>
 <section class="block-products">
   <div *ngFor="let prod of finishArray" class="product-item">
     <img src="{{prod.image}}" [routerLink]="[ '/products', prod.id ]">
     <div class="product-list">
       <h3>{{prod.title}}</h3>
-      <span class="price">$ {{prod.prize}}</span>
-      <a [routerLink]="[ '/products', prod.id ]" class="button">Order</a>
+      <a [routerLink]="[ '/products', prod.id ]" class="button">DETAILS</a>
     </div>
   </div>
 </section>

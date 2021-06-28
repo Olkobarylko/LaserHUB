@@ -16,6 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  font-family: 'montserrat';
 }
 
 .product-item {
@@ -24,7 +25,6 @@
   text-align: center;
   border-bottom: 2px solid #F5F5F5;
   background: white;
-  font-family: "Open Sans";
   transition: .3s ease-in;
 }
 
@@ -59,7 +59,7 @@
 .button {
   text-decoration: none;
   display: inline-block;
-  padding: 0 12px;
+  padding: 6px 36px;
   background: #cccccc;
   color: white;
   text-transform: uppercase;

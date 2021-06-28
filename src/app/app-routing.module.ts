@@ -20,7 +20,7 @@ import { LoftfurnitureComponent } from './pages/goods/loftfurniture/loftfurnitur
 import { ProductsComponent } from './admin/products/products.component';
 import { ProductdesriptionComponent } from './pages/productdesription/productdesription.component';
 import { BasketComponent } from './pages/basket/basket.component';
-
+import { OrdersComponent } from './admin/orders/orders.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -43,6 +43,7 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: '/admin/blog' },
       { path: 'blog', component: BlogsComponent },
       { path: 'ousourcing', component: OutsorcingComponent },
+      { path: 'orders', component: OrdersComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'contacts', component: AdmincontactsComponent }
     ]

@@ -24,4 +24,5 @@ export class BasketService {
     }
     localStorage.setItem('basket', JSON.stringify(prods))
   } 
+  
 }
