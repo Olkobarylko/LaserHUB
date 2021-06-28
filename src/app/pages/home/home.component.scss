@@ -82,42 +82,6 @@
   top: 326px;
 }
 
-.dot-animate  {
-  border: 2px solid #fff;
-  border-radius: 26px;
-  position: absolute;
-  left: 50%;
-  top: 900px;
-  width: 26px;
-  height: 42px;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-
-  a {
-    display: block;
-    height: 51px;
-    width: 35px;
-    top: -7px;
-    left: -7px;
-    position: relative;
-  }
-
-
-  .dot-animate::after {
-    background-color: #fff;
-    border-radius: 100%;
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    margin-left: -2px;
-    width: 4px;
-    height: 4px;
-    opacity: 1;
-    transform: translateY(0px) scaleY(1) scaleX(1) translateZ(0px);
-    animation: scroll 1.5s -1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-  }
-}
 
 .howItWorks {
   margin: 70px 0;
