@@ -12,7 +12,7 @@
   justify-content: space-around;
 
   .main-image {
-    background-color: rgb(238, 237, 237);
+
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -22,13 +22,12 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 60vh;
+      height: 400px;
     }
   }
 
   .main-info {
     padding-top: 3%;
-    background-color: rgb(238, 237, 237);
     width: 50%;
     text-align: left;
     padding-left: 3%;
@@ -102,15 +101,36 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     .main-info {
       width: 80%;
+
       p {
         margin-top: 30px;
         padding-right: 5%;
       }
     }
+
+  }
+
+
+}
+
+@media screen and (max-width: 500px) {
+  .main-block {
+    .main-info {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .main-block {
     .main-image {
-      width: 70%;
+      img {
+        width: 300px;
+        height: 300px;
+      }
     }
   }
 }

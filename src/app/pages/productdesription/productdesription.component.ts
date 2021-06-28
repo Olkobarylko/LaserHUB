@@ -23,8 +23,7 @@ export class ProductdesriptionComponent implements OnInit {
     const ID = this.ActiveRoute.snapshot.paramMap.get('id');
     this.db.collection("products").doc(ID).get().subscribe((doc) => {
       this.oneProd = doc.data();
-      this.price = this.oneProd.sizeArray[0].prise;
-
+      this.price = this.oneProd.sizeArray[this.oneProd.sizeArray.length - 1].prise;
     })
   }
   changeProductCount(prod: any, status: boolean): void {
