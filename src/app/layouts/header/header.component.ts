@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        if (event.url == '/home') {
+        if (event.url == '/home' || event.url =='/') {
           this.background = true;
           this.checkBack = true;
         }
