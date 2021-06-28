@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
   size: string;
   imageStatus: boolean;
   uploadPercent: Observable<number>;
+  editStatus: boolean;
   count = 1;
   constructor(private db: AngularFirestore,
     private storage: AngularFireStorage) { }
@@ -114,11 +115,12 @@ export class ProductsComponent implements OnInit {
         this.title = this.productsArray[i].title;
         this.image = this.productsArray[i].image;
         this.description = this.productsArray[i].description;
-        this.prize = this.productsArray[i].prize;
-        this.size = this.productsArray[i].size;
-        this.category = this.productsArray[i].size;
+        this.category = this.productsArray[i].category;
+        this.imageStatus = true;
+        this.editStatus = true;
       }
     }
+
   }
 
   saveBlog(): void {
@@ -137,7 +139,10 @@ export class ProductsComponent implements OnInit {
     }).catch((error) => {
       console.error("Error removing document: ", error);
     });
+    this.imageStatus = false;
+    this.editStatus = false;
     this.resetForm();
+
   }
 
   addSize(): void {

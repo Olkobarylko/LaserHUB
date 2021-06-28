@@ -6,11 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { DiscoverComponent } from './pages/discover/discover.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { CreateComponent } from './pages/create/create.component';
 import { GoodsComponent } from './pages/goods/goods.component';
-import { ServiceComponent } from './pages/service/service.component';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -41,11 +38,8 @@ import { OrdersComponent } from './admin/orders/orders.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    DiscoverComponent,
     BlogComponent,
-    CreateComponent,
     GoodsComponent,
-    ServiceComponent,
     ContactsComponent,
     StorecreatorsComponent,
     AdminComponent,

@@ -1,14 +1,13 @@
 <footer>
-  <div class="site-info col-md-4 col-sm-3">
+  <div class="site-info col-md-4 col-sm-3" [routerLink]="[ '/home' ]">
     ©2021 laserhub.com
   </div>
   <div class="col-md-8 col-sm-9">
     <ul class="footer-links">
-      <li><a>Discover</a></li>
-      <li><a>Design Guidelines</a></li>
-      <li><a>Outsource</a></li>
-      <li><a>My Account</a></li>
-      <li><a>Contact</a></li>
+      <li><a [routerLink]="[ '/products' ]">Goods</a></li>
+      <li><a [routerLink]="[ '/blog' ]">Blog</a></li>
+      <li><a [routerLink]="[ '/contacts' ]">Contacts</a></li>
+      <li><a [routerLink]="[ '/storecreators' ]">Store Creators</a></li>
     </ul>
   </div>
 </footer>

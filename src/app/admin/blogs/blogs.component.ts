@@ -19,6 +19,7 @@ export class BlogsComponent implements OnInit {
   moreText: string;
   editIndex: string;
   imageStatus: boolean;
+  editStatus: boolean;
   uploadPercent: Observable<number>;
   constructor(private BlogserviceService: BlogserviceService,
     private db: AngularFirestore,
@@ -114,6 +115,8 @@ export class BlogsComponent implements OnInit {
         this.image = this.blogsArray[i].image;
         this.description = this.blogsArray[i].description;
         this.moreText = this.blogsArray[i].moreText;
+        this.imageStatus = true;
+        this.editStatus = true;
       }
     }
   }
@@ -132,6 +135,8 @@ export class BlogsComponent implements OnInit {
     }).catch((error) => {
       console.error("Error removing document: ", error);
     });
+    this.imageStatus = false;
+        this.editStatus = false;
     this.resetForm();
   }
 

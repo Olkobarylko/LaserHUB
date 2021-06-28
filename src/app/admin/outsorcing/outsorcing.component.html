@@ -25,8 +25,8 @@
     </div>
   </ng-template>
 
-  <button type="button" class="btn btn-success" (click)="addOut()">Add</button>
-  <button type="button" class="btn btn-primary" (click)="saveOut()">Save</button>
+  <button *ngIf="!editStatus" type="button" class="btn btn-success" (click)="addOut()">Add</button>
+  <button *ngIf="editStatus" type="button" class="btn btn-primary" (click)="saveOut()">Save</button>
 </div>
 <table style="text-align: center;" class="table align-middle">
   <thead>
