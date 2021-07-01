@@ -1,67 +1,110 @@
 footer {
-    text-align: center;
-    border-top: 0px solid #efefef;
-    display: flex;
-    justify-content: center;
-    margin:  25px auto;
-    font-weight: bolder;
-    font-family: 'montserrat',sans-serif;
+  text-align: center;
+  border-top: 0px solid #efefef;
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+  font-weight: bolder;
+  font-family: 'montserrat', sans-serif;
 }
 
 .site-info {
-    color: rgb(181, 186, 197);
-    letter-spacing: -0.015em;
-    font-size: 13px;
-    padding-left: 15%;
-    cursor: pointer;
+  color: rgb(181, 186, 197);
+  letter-spacing: -0.015em;
+  font-size: 13px;
+  padding-left: 15%;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+
+  .flex-icons {
+    display: flex;
+    margin-right: 5px;
+
+    i {
+      font-size: 22px;
+      margin-left: 4px;
+      margin-top: -7px;
+    }
+
+    div {
+      margin-top: -4px;
+      margin-left: 2px;
+      width: 27px;
+      height: 27px;
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/lazerhub-23fa1.appspot.com/o/images%2Fgoodscategory%2FVIBER-LOGO-1.png?alt=media&token=44860648-08aa-40a6-b4c6-0fc3e3022674');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+  }
 }
 
 ul.footer-links {
-    list-style-type: none;
-}
-ul, ol {
-    margin-top: 0;
-    margin-bottom: 10px;
+  list-style-type: none;
 }
 
-ul.footer-links li, ul.footer-links li a {
-    cursor: pointer;
-    font-size: 13px;
-    color: #BBC0CB;
-    text-decoration: none;
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+ul.footer-links li,
+ul.footer-links li a {
+  cursor: pointer;
+  font-size: 13px;
+  color: #BBC0CB;
+  text-decoration: none;
 }
 
 ul.footer-links li {
+  display: inline;
+  margin-left: 10px;
+}
+
+ul.footer-links li:not(:last-of-type)::after {
+  content: "|";
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 957px) {
+    .flex-icons {
+        margin-top: 5px;
+    }    
+}
+
+@media screen and (max-width: 600px) {
+  .site-info {
+    font-size: 10px;
+    padding-left: 5%;
+  }
+
+  ul.footer-links li,
+  ul.footer-links li a {
+    font-size: 10px;
+  }
+
+  ul,
+  ol {
+    margin-top: -5px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+    .flex-icons {
+        margin-top: 0px;
+    }    
+}
+
+@media screen and (max-width: 380px) {
+  ul.footer-links li {
     display: inline;
-    margin-left: 10px;
-}
+    margin-left: 6px;
+  }
 
-ul.footer-links li:not(:last-of-type)::after{
+  ul.footer-links li:not(:last-of-type)::after {
     content: "|";
-    margin-left: 10px;
-}
-
-@media screen and (max-width: 600px){
-    .site-info {
-        font-size: 10px;
-        padding-left: 5%;
-    }
-    ul.footer-links li, ul.footer-links li a {
-        font-size: 10px;
-    }
-    ul, ol {
-        margin-top: -5px;
-    }
-}
-
-@media screen and (max-width: 380px){
-    ul.footer-links li {
-        display: inline;
-        margin-left: 6px;
-    }
-    
-    ul.footer-links li:not(:last-of-type)::after{
-        content: "|";
-        margin-left: 6px;
-    }
+    margin-left: 6px;
+  }
 }

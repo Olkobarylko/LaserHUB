@@ -1,42 +1,42 @@
 <section class="basket-section">
   <div class="left-main-block">
-    <h3>Billing & Shipping</h3>
+    <h3>Доставка та оплата</h3>
     <div class="mini-wrapper" style="display: flex;">
-      <div class="mini-block-input"><label class="">FIRST NAME*</label>
+      <div class="mini-block-input"><label class="">Ім'я*</label>
         <input type="text" [(ngModel)]="firstName" name="firstName" class="input-text"></div>
-      <div class="mini-block-input"><label class="">LAST NAME*</label>
+      <div class="mini-block-input"><label class="">Прізвище*</label>
         <input type="text" [(ngModel)]="lastName" name="lastName" class="input-text"></div>
     </div>
-    <div class="big-block-input"><label class="">PHONE*</label>
+    <div class="big-block-input"><label class="">Телефон*</label>
       <input type="text" [(ngModel)]="phone" name="phone" class="input-text"></div>
-    <div class="big-block-input"><label class="">EMAIL ADDRESS</label>
+    <div class="big-block-input"><label class="">Email Address</label>
       <input type="text" [(ngModel)]="email" name="email" class="input-text"></div>
-    <div class="big-block-input"> <label class="">Order notes</label>
+    <div class="big-block-input"> <label class="">Примітки до замовлення</label>
       <textarea [(ngModel)]="note" name="note"></textarea></div>
   </div>
   <div class="right-main-block">
-    <h3>Your Order</h3>
+    <h3>Ваше замовлення</h3>
     <div class="table">
       <div class="t-head">
-        <span>Product</span>
-        <span style="margin-left: 40px;">Total</span>
+        <span>Товар</span>
+        <span style="margin-left: 40px;">Усього</span>
       </div>
       <div class="tbody">
         <div class="block-prod" *ngFor="let prod of basket">
           <div class="mini-block">
             <p style="font-size: 19px;">{{prod.title}}</p>
-            <p class="bold-p">Quantity: <span>{{prod.count}}</span></p>
-            <p class="bold-p">Price: <span>${{prod.newPrice}}</span></p>
+            <p class="bold-p">Кількість: <span>{{prod.count}}</span></p>
+            <p class="bold-p">Ціна: <span>UAH {{prod.newPrice}}</span></p>
           </div>
           <div class="mini-block right">
-            <p style="margin-top: 30px;font-size: 24px;">${{prod.newPrice*prod.count}}</p>
+            <p style="margin-top: 30px;font-size: 24px;">UAH {{prod.newPrice*prod.count}}</p>
             <i (click)="deleteProd(prod)" class="bi bi-x"></i>
           </div>
         </div>
       </div>
       <div class="t-footer">
-        <span>Total price:</span>
-        <span>${{totalPrice}}</span>
+        <span>Загальна ціна:</span>
+        <span>UAH {{totalPrice}}</span>
       </div>
     </div>
     <div style="display: flex;justify-content: flex-end;"><button type="submit" class="button alt"
