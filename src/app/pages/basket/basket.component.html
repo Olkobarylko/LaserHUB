@@ -3,13 +3,16 @@
     <h3>Доставка та оплата</h3>
     <div class="mini-wrapper" style="display: flex;">
       <div class="mini-block-input"><label class="">Ім'я*</label>
-        <input type="text" [(ngModel)]="firstName" name="firstName" class="input-text"></div>
+        <input type="text" [(ngModel)]="firstName" name="firstName" class="input-text"
+          (ngModelChange)="onChangeFirstName($event)"></div>
       <div class="mini-block-input"><label class="">Прізвище*</label>
-        <input type="text" [(ngModel)]="lastName" name="lastName" class="input-text"></div>
+        <input type="text" [(ngModel)]="lastName" name="lastName" class="input-text"
+          (ngModelChange)="onChangeLastName($event)"></div>
     </div>
     <div class="big-block-input"><label class="">Телефон*</label>
-      <input type="text" [(ngModel)]="phone" name="phone" class="input-text"></div>
-    <div class="big-block-input"><label class="">Email Address</label>
+      <input type="text" [(ngModel)]="phone" name="phone" class="input-text" (ngModelChange)="onChangePhone($event)">
+    </div>
+    <div class="big-block-input"><label class="">Електронна адреса</label>
       <input type="text" [(ngModel)]="email" name="email" class="input-text"></div>
     <div class="big-block-input"> <label class="">Примітки до замовлення</label>
       <textarea [(ngModel)]="note" name="note"></textarea></div>
@@ -35,13 +38,31 @@
         </div>
       </div>
       <div class="t-footer">
-        <span>Загальна ціна:</span>
+        <span>Разом:</span>
         <span>UAH {{totalPrice}}</span>
       </div>
     </div>
-    <div style="display: flex;justify-content: flex-end;"><button type="submit" class="button alt"
-        name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order"
-        (click)="addOrder()">Order</button></div>
+    <div style="display: flex;justify-content: flex-end;"><button type="button" class="button alt"
+        name="woocommerce_checkout_place_order" id="place_order" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="addOrder()" [style.backgroundColor]="checkNameTelDis?'#1285e8':'gray'"
+        [disabled]='!checkNameTelDis'>Замовити</button></div>
   </div>
 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Дякуємо!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Ваше замовлення опрацьовується.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" [routerLink]="[ '/home' ]" data-bs-dismiss="modal"
+            aria-label="Close">На Головну</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

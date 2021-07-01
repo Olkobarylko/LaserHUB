@@ -4,19 +4,20 @@
 <section class="form-section">
   <div class="first-block-form">
     <div class="form-block">
-      <span class="form-label-on">Name</span>
+      <span class="form-label-on">Ім’я</span>
       <input type="text" [(ngModel)]="firstName" name="firstName" (ngModelChange)="onChangeName($event)">
     </div>
-    <div class="form-block"><span class="form-label-on">Email</span>
+    <div class="form-block"><span class="form-label-on">Електронна адреса</span>
       <input type="text" [(ngModel)]="email" name="email" (ngModelChange)="onChangeEmail($event)"></div>
   </div>
   <div class="big-block-form">
-    <span>SUBJECT</span>
+    <span>Тема</span>
     <input type="text" [(ngModel)]="subject" name="subject">
   </div>
   <div class="big-block-form">
-    <span>Message</span>
+    <span>Повідомлення</span>
     <textarea [(ngModel)]="message" name="message"></textarea>
   </div>
-  <button (click)="addContact()" [disabled]='!checkNameEmailDis' [ngClass]="{'grey-btn': !checkNameEmailDis}">SEND</button>
+  <button (click)="addContact()" [disabled]='!checkNameEmailDis' [ngClass]="{'grey-btn': !checkNameEmailDis}">Надіслати
+</button>
 </section>
