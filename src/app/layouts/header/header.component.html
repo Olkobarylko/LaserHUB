@@ -28,7 +28,7 @@
       </div>
       <div class="busket" [routerLink]="[ '/basket' ]"><i class="bi bi-cart"></i> <span
           class="woocommerce-Price-amount amount"><span
-            class="woocommerce-Price-currencySymbol">$</span>{{totalPrice}}</span></div>
+            class="woocommerce-Price-currencySymbol">UAH </span>{{totalPrice}}</span></div>
       <div class="hamburger-menu">
         <input id="menutoggle" type="checkbox" [(ngModel)]="checkBurger" name="checkBurger">
         <label class="menubtn" for="menutoggle">
@@ -43,11 +43,11 @@
           <hr>
           <li><a class="menuitem" [routerLink]="[ '/products']">Товари</a></li>
           <hr>
-          <li><a class="menuitem phone" [routerLink]="[ '/lasercut']">laser cutting</a></li>
+          <li><a class="menuitem phone" [routerLink]="[ '/lasercut']">Вироби з металу</a></li>
           <hr class="phone">
-          <li><a class="menuitem phone" [routerLink]="[ '/gardencube']">garden cube</a></li>
+          <li><a class="menuitem phone" [routerLink]="[ '/gardencube']">Садовий куб</a></li>
           <hr class="phone">
-          <li><a class="menuitem phone" [routerLink]="[ '/loftfurniture']">loft furniture</a></li>
+          <li><a class="menuitem phone" [routerLink]="[ '/loftfurniture']">Loft меблі</a></li>
           <hr class="phone">
         </ul>
       </div>

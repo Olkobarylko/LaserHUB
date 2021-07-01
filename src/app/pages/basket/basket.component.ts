@@ -16,6 +16,10 @@ export class BasketComponent implements OnInit {
   phone: string = null;
   email: string = null;
   note: string = null;
+  checkFirst: boolean;
+  checkSecond: boolean;
+  checkEmail: boolean;
+  checkNameTelDis: boolean;
   constructor(private BasketService: BasketService,
     private db: AngularFirestore) { }
 
@@ -97,6 +101,43 @@ export class BasketComponent implements OnInit {
     }).catch(err => console.log(err));
     this.resetForm();
     this.updateLocalBasket();
+  }
+  onChangeFirstName(newValue): void {
+    if (newValue.length > 0) {
+      this.checkFirst = true;
+    }
+    else {
+      this.checkFirst = false;
+    }
+    this.checkAllChange();
+  }
+  onChangeLastName(newValue): void {
+    if (newValue.length > 0) {
+      this.checkSecond = true;
+    }
+    else {
+      this.checkSecond = false;
+    }
+    this.checkAllChange();
+  }
+
+  onChangePhone(newValue): void {
+    if (newValue.length > 0) {
+      this.checkEmail = true;
+    }
+    else {
+      this.checkEmail = false;
+    }
+    this.checkAllChange();
+  }
+
+  checkAllChange(): void {
+    if (this.checkFirst && this.checkSecond && this.checkEmail) {
+      this.checkNameTelDis = true;
+    }
+    else {
+      this.checkNameTelDis = false;
+    }
   }
 
   resetForm(): void {
