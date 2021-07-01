@@ -43,24 +43,25 @@
       </div>
     </div>
     <div style="display: flex;justify-content: flex-end;"><button type="button" class="button alt"
-        name="woocommerce_checkout_place_order" id="place_order" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        name="woocommerce_checkout_place_order" id="place_order" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
         (click)="addOrder()" [style.backgroundColor]="checkNameTelDis?'#1285e8':'gray'"
         [disabled]='!checkNameTelDis'>Замовити</button></div>
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Дякуємо!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="staticBackdropLabel">Дякуємо!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            [routerLink]="[ '/home' ]"></button>
         </div>
         <div class="modal-body">
           Ваше замовлення опрацьовується.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" [routerLink]="[ '/home' ]" data-bs-dismiss="modal"
-            aria-label="Close">На Головну</button>
+          <button type="button" class="btn btn-primary" [routerLink]="[ '/home' ]">На Головну</button>
         </div>
       </div>
     </div>

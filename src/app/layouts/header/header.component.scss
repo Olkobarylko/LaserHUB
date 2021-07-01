@@ -93,29 +93,32 @@ header {
 .navbar-mini {
   padding-top: 8px;
   position: absolute;
-  left: -45px;
+  left: -60px;
   background-color: #1285E8;
   color: white;
   opacity: 0;
   height: 90px;
-  width: 150px;
+  min-width: 175px;
   transition: .45s all;
 
   ul {
+    padding: 0px;
     list-style-type: none;
+
 
     li {
       cursor: pointer;
       position: relative;
-      width: 90px;
+      min-width: 50px;
+      text-align: center;
     }
 
     li::after {
       content: "";
       position: absolute;
       top: 25px;
-      left: 0px;
-      width: 0%;
+      left: 25px;
+      min-width: 0%;
       height: 1px;
       background-color: white;
       transition: all .32s ease-out;
@@ -123,7 +126,7 @@ header {
 
     li:hover::after {
       content: "";
-      width: 100%;
+      min-width: 125px;
     }
   }
 }
@@ -314,5 +317,8 @@ header {
     .phone {
       display: block;
     }
+  }
+  .busket {
+    padding: 5px 5px;
   }
 }
