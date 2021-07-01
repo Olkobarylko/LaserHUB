@@ -5,19 +5,19 @@
     </div>
     <div class="main-info">
       <h2>{{oneProd.title}}</h2>
-      <h3>Prize : {{price}} $</h3>
-      <h4>Sizes : </h4>
+      <h3>Ціна : {{price}} UAH</h3>
+      <h4>Розміри : </h4>
       <span *ngFor="let size of oneProd.sizeArray , index as i"><input checked type="radio" 
           name="options" class="btn-check" id="btn-check-{{i}}-outlined" autocomplete="off">
         <label (click)="addPrice(i)" class="btn btn-outline-secondary" for="btn-check-{{i}}-outlined">{{size.size}}</label></span>
-      <h4>Quantity: </h4>
+      <h4>Кількість: </h4>
       <div class="btn-group" role="group" aria-label="Basic outlined example">
         <button type="button" class="btn btn-outline-secondary" (click)="changeProductCount(oneProd,false)">-</button>
         <button type="button" class="btn btn-outline-secondary">{{oneProd.count}}</button>
         <button type="button" class="btn btn-outline-secondary" (click)="changeProductCount(oneProd,true)">+</button>
       </div><br>
       <div class="busket">
-        <a (click)="addToBusket(oneProd)">Add to busket</a>
+        <a (click)="addToBusket(oneProd)">Додати до кошика</a>
       </div>
       <p>{{oneProd.description}}</p>
     </div>

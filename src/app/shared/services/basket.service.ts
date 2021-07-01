@@ -11,7 +11,7 @@ export class BasketService {
     let prods: Array<any> = [];
     if (localStorage.getItem('basket')) {
       prods = JSON.parse(localStorage.getItem('basket'));
-      if (prods.some(product => product.id === prod.id)) {
+      if (prods.some(product => product.id === prod.id) && prods.some(produ => produ.newPrice === prod.newPrice)) {
         const INDEX = prods.findIndex(product => product.id === prod.id);
         prods[INDEX].count += prod.count;
       }
@@ -23,6 +23,6 @@ export class BasketService {
       prods.push(prod);
     }
     localStorage.setItem('basket', JSON.stringify(prods))
-  } 
-  
+  }
+
 }
