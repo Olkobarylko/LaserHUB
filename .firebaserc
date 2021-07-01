@@ -1,12 +1,5 @@
 {
   "targets": {
-    "lazerhub-23fa1": {
-      "hosting": {
-        "LaserHUB": [
-          "lazerhub-23fa1"
-        ]
-      }
-    },
     "laserhub-91a41": {
       "hosting": {
         "LaserHUB": [
