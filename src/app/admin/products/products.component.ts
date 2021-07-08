@@ -22,6 +22,9 @@ export class ProductsComponent implements OnInit {
   uploadPercent: Observable<number>;
   editStatus: boolean;
   count = 1;
+  miniArray: any = [];
+  selectSize: any;
+  newSizeArray: any = [];
   constructor(private db: AngularFirestore,
     private storage: AngularFireStorage) { }
 
@@ -108,6 +111,19 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  onSubmit(event: any) {
+    this.newSizeArray = [];
+    for (let i = 0; i < this.miniArray.length; i++) {
+      const arr = {
+        size: event.target.player[i].value,
+        prise: event.target.olko[i].value
+      }
+      this.newSizeArray.push(arr);
+    }
+    this.sizeArray = this.newSizeArray;
+    console.log(this.newSizeArray);
+  }
+
   editBlog(id: string): void {
     for (let i = 0; i < this.productsArray.length; i++) {
       if (this.productsArray[i].id == id) {
@@ -118,6 +134,8 @@ export class ProductsComponent implements OnInit {
         this.category = this.productsArray[i].category;
         this.imageStatus = true;
         this.editStatus = true;
+        this.miniArray = this.productsArray[i].sizeArray;
+        this.sizeArray = this.productsArray[i].sizeArray
       }
     }
 
@@ -129,9 +147,8 @@ export class ProductsComponent implements OnInit {
       "title": this.title,
       "image": this.image,
       "description": this.description,
-      "moreText": this.prize,
-      "size": this.size,
-      "category": this.category
+      "category": this.category,
+      "sizeArray": this.sizeArray
     }).then(() => {
       console.log("Document successfully updated!");
       this.productsArray = [];

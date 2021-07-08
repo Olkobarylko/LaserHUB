@@ -1,16 +1,16 @@
 .section-goods {
-  margin: 0 auto;
+  margin: 0px auto 80px;
   width: 90%;
 }
 
 .main-block {
+  padding-top: 120px;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .mini-block {
-  padding-top: 10%;
   width: 30%;
   margin-bottom: 40px;
   cursor: pointer;
@@ -37,7 +37,6 @@
 
 @media screen and (max-width: 1300px) {
   .main-block {
-    padding-top: 8%;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -46,7 +45,6 @@
   }
 
   .mini-block {
-    padding-top: 1%;
     width: 55%;
     margin-bottom: 20px;
     cursor: pointer;
@@ -54,12 +52,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .main-block {
-    padding-top: 18%;
-  }
-
   .mini-block {
-    padding-top: 1%;
     width: 70%;
     margin-bottom: 20px;
     cursor: pointer;
