@@ -13,7 +13,7 @@
     <div class="col-md-6 processes-content" [style.Order]="(i%2===0)?'1':'2'">
       <div class="process-valign">
         <h3 class="processes-title">{{out.title}}</h3>
-        <p>{{out.description}}</p>
+        <p style="white-space: pre-line" [innerHTML]="out.description"></p>
         <p></p>
       </div>
       <p></p>

@@ -13,8 +13,7 @@ export class OutsorcingComponent implements OnInit {
   outsourcingArray: any = [];
   title: string;
   image: string;
-  description: string;
-  moreText: string;
+  description: string = '';
   editIndex: string;
   imageStatus: boolean;
   editStatus: boolean;
@@ -137,5 +136,8 @@ export class OutsorcingComponent implements OnInit {
     this.title = '';
     this.image = '';
     this.description = '';
+  }
+  createlink():void{
+    this.description+= `\n <a href="посилання">текст посилання</a>`
   }
 }

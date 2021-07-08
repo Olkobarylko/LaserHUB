@@ -19,7 +19,7 @@
       <div class="busket">
         <a (click)="addToBusket(oneProd)">Додати до кошика</a>
       </div>
-      <p>{{oneProd.description}}</p>
+      <p style="white-space: pre-line" [innerHTML]="oneProd.description"></p>
     </div>
 
   </div>
