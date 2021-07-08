@@ -146,4 +146,7 @@ export class BlogsComponent implements OnInit {
     this.description = '';
     this.moreText = '';
   }
+  createlink():void{
+    this.moreText+= `\n <a href="посилання">текст посилання</a>`
+  }
 }

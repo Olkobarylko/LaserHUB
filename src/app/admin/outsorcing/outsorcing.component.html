@@ -47,7 +47,7 @@
       <td>{{out.description}}</td>
       <td><button class="btn btn-warning" (click)="editOut(out.id)">Редагувати</button></td>
       <td>
-        <button class="btn btn-danger" (click)="deleteOut(out.id)">Видалити</button>
+        <button class="btn btn-danger" (click)="deleteOut(out.id)" [disabled]="editStatus">Видалити</button>
       </td>
     </tr>
   </tbody>

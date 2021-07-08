@@ -3,9 +3,9 @@
     <div class="post-on-blog-featured-img" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}">
     </div>
     <h1 class="entry-title">{{blog.title}}</h1>
-    <p>{{blog.description}} […]
+    <p style="white-space: pre-line" [innerHTML]="blog.description">
     </p>
-    <div style="display: flex;"><a class="continue-reading" [routerLink]="[ '/blog', blog.id ]" >Continue reading </a><i
+    <div style="display: flex;"><a class="continue-reading" [routerLink]="[ '/blog', blog.id ]">Continue reading </a><i
         class="bi bi-caret-right arrow-right "></i></div>
     <div class="mini-block"></div>
   </div>

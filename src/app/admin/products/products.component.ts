@@ -162,6 +162,10 @@ export class ProductsComponent implements OnInit {
 
   }
 
+  deleteSize(i: any): void {
+    this.sizeArray.splice(i, 1);
+  }
+
   addSize(): void {
     const size = {
       size: this.size,

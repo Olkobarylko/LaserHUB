@@ -1,6 +1,6 @@
 <section class="blog-desc-section">
   <div class="image" [ngStyle]="{'background-image': 'url(' + oneBlog.image + ')'}"></div>
   <h1>{{oneBlog.title}}</h1>
-  <p>{{oneBlog.description}}</p>
-  <p>{{oneBlog.moreText}} </p>
+  <p style="white-space: pre-line" [innerHTML]="oneBlog.description"></p>
+  <p style="white-space: pre-line" [innerHTML]="oneBlog.moreText"></p>
 </section>
