@@ -164,6 +164,7 @@ export class ProductsComponent implements OnInit {
 
   deleteSize(i: any): void {
     this.sizeArray.splice(i, 1);
+    this.miniArray = this.sizeArray;
   }
 
   addSize(): void {
@@ -172,6 +173,7 @@ export class ProductsComponent implements OnInit {
       prise: this.prize
     }
     this.sizeArray.push(size);
+    this.miniArray = this.sizeArray;
     this.prize = '';
     this.size = '';
     console.log(this.sizeArray);
