@@ -113,15 +113,27 @@ export class ProductsComponent implements OnInit {
 
   onSubmit(event: any) {
     this.newSizeArray = [];
-    for (let i = 0; i < this.miniArray.length; i++) {
+    if (this.sizeArray.length > 1) {
+      for (let i = 0; i < this.miniArray.length; i++) {
+        const arr = {
+          size: event.target.player[i].value,
+          prise: event.target.olko[i].value
+        }
+        this.newSizeArray.push(arr);
+      }
+      this.sizeArray = this.newSizeArray;
+      console.log(this.newSizeArray);
+    }
+    else if (this.sizeArray.length == 1) {
       const arr = {
-        size: event.target.player[i].value,
-        prise: event.target.olko[i].value
+        size: event.target.player.value,
+        prise: event.target.olko.value
       }
       this.newSizeArray.push(arr);
+      this.sizeArray = this.newSizeArray;
     }
-    this.sizeArray = this.newSizeArray;
-    console.log(this.newSizeArray);
+
+
   }
 
   editBlog(id: string): void {
@@ -134,10 +146,10 @@ export class ProductsComponent implements OnInit {
         this.category = this.productsArray[i].category;
         this.imageStatus = true;
         this.editStatus = true;
-        this.miniArray = this.productsArray[i].sizeArray;
-        this.sizeArray = this.productsArray[i].sizeArray
+        this.sizeArray = this.productsArray[i].sizeArray;
       }
     }
+    this.miniArray = this.sizeArray;
 
   }
 
