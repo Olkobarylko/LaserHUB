@@ -17,7 +17,6 @@ export class ProductdesriptionComponent implements OnInit {
 
   ngOnInit(): void {
     this.renderOneProm();
-
   }
   renderOneProm(): void {
     const ID = this.ActiveRoute.snapshot.paramMap.get('id');

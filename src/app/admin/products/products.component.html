@@ -15,10 +15,23 @@
     <label for="urlName" class="form-label">Опис:</label>
     <textarea type="text" class="form-control" [(ngModel)]="description" name="description"></textarea>
   </div>
+
+  <div class="mb-3" *ngIf="editStatus">
+    <form (ngSubmit)="onSubmit($event)">
+      <div *ngFor="let prod of miniArray ,index as i"><label for="urlName" class="form-label">Розмір:</label>
+        <input type="text" class="form-control" name="player" [value]="prod.size">
+        <label for="urlName" class="form-label">Ціна:</label>
+        <input type="text" class="form-control" name="olko" [value]="prod.prise"></div>
+      <input style="margin-top: 15px;margin-bottom: 15px;" class="btn btn-secondary" type='submit'
+        value='Підтвердити зміни в розмірах'>
+    </form>
+  </div>
+<div class="mb-3" *ngIf="!editStatus">
   <div class="mb-3">
     <label for="urlName" class="form-label">Ціна:</label>
     <input type="text" class="form-control" [(ngModel)]="prize" name="prize">
   </div>
+
   <div class="mb-3">
     <label for="urlName" class="form-label">Розмір:</label>
     <input type="text" class="form-control" [(ngModel)]="size" name="size">
@@ -26,25 +39,26 @@
   <button style="margin-bottom: 10px;" type="button" class="btn btn-secondary" (click)="addSize()">Додати ціну за
     розмір</button>
   <p *ngFor="let size of sizeArray">Розмір : {{size.size}} - <span>Ціна :{{size.prise}}</span></p>
-  <ng-container *ngIf="!imageStatus; else elseTemplate">
-    <div class="custom-file">
-      <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
-      <label class="custom-file-label" for="urlImage">Choose file...</label>
-    </div>
-    <div class="progress mt-3 mb-3">
-      <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-        [style.width]="(uploadPercent | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </ng-container>
-  <ng-template #elseTemplate>
-    <div style="display: flex;align-items: center;" class="image mb-3">
-      <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
-      <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
-    </div>
-  </ng-template>
+</div>
+<ng-container *ngIf="!imageStatus; else elseTemplate">
+  <div class="custom-file">
+    <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
+    <label class="custom-file-label" for="urlImage">Choose file...</label>
+  </div>
+  <div class="progress mt-3 mb-3">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+      [style.width]="(uploadPercent | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div style="display: flex;align-items: center;" class="image mb-3">
+    <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
+    <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
+  </div>
+</ng-template>
 
-  <button *ngIf="!editStatus" type="button" class="btn btn-success" (click)="addBlog()">Add</button>
-  <button *ngIf="editStatus" type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
+<button *ngIf="!editStatus" type="button" class="btn btn-success" (click)="addBlog()">Add</button>
+<button *ngIf="editStatus" type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
 </div>
 <table style="text-align: center;" class="table align-middle">
   <thead>
