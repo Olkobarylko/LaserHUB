@@ -4,10 +4,10 @@
 <section class="form-section">
   <div class="first-block-form">
     <div class="form-block">
-      <span class="form-label-on">Ім’я</span>
+      <span class="form-label-on">Ім’я*</span>
       <input type="text" [(ngModel)]="firstName" name="firstName" (ngModelChange)="onChangeName($event)">
     </div>
-    <div class="form-block"><span class="form-label-on">Електронна адреса</span>
+    <div class="form-block"><span class="form-label-on">Електронна адреса*</span>
       <input type="text" [(ngModel)]="email" name="email" (ngModelChange)="onChangeEmail($event)"></div>
   </div>
   <div class="big-block-form">
@@ -18,6 +18,24 @@
     <span>Повідомлення</span>
     <textarea [(ngModel)]="message" name="message"></textarea>
   </div>
-  <button (click)="addContact()" [disabled]='!checkNameEmailDis' [ngClass]="{'grey-btn': !checkNameEmailDis}">Надіслати
-</button>
+  <button class="send" (click)="addContact()" [disabled]='!checkNameEmailDis'
+    [ngClass]="{'grey-btn': !checkNameEmailDis}" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Надіслати
+  </button>
+
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Дякуємо!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            [routerLink]="[ '/home' ]"></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [routerLink]="[ '/home' ]">На
+            Головну</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

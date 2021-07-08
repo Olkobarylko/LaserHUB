@@ -635,69 +635,75 @@
   }
 
 }
-
-@media screen and (max-width: 550px) {
-  .getInTouch {
-    div {
-      font-size: 16px;
-
-      a {
-        padding: 13px 17px;
-        font-size: 15px;
-        margin-left: 20px;
-      }
-    }
-
-  }
-
-}
-
-@media screen and (max-width: 475px) {
-  .relative-block {
-    position: relative;
-    margin-left: -20%;
-  }
-
-  .getInTouch {
-    div {
-      font-size: 16px;
-      position: relative;
-      height: 140px;
-      padding: 25px 40px;
-
-      a {
-        width: 130px;
-        position: absolute;
-        padding: 13px 17px;
-        font-size: 15px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        top: 60px;
-      }
-    }
-
-  }
-
-}
-
-@media screen and (max-width: 420px) {
-  .relative-block {
-    position: relative;
-    width: 280px;
-  }
-  .sleeve {
-    width: 320px;
-    left: 10px;
-  }
-  .animateme {
-    max-width: 280px;
-    height: 280px;
-    left: 30px;
-    img {
-      max-width: 280px;
-    }
-  }
-  
+@media screen and (max-width: 600px) { 
+  .getInTouch { 
+    div { 
+      font-size: 16px; 
+ 
+      a { 
+        padding: 13px 17px; 
+        font-size: 15px; 
+        margin-left: 20px; 
+      } 
+    } 
+ 
+  } 
+ 
+} 
+ 
+@media screen and (max-width: 535px) { 
+  .relative-block { 
+    position: relative; 
+    margin-left: -20%; 
+  } 
+ 
+  .getInTouch { 
+    div { 
+      font-size: 16px; 
+      position: relative; 
+      height: 140px; 
+      padding: 25px 40px; 
+ 
+      a { 
+        width: 170px; 
+        position: absolute; 
+        padding: 13px 17px; 
+        font-size: 15px; 
+        margin-left: auto; 
+        margin-right: auto; 
+        left: 0; 
+        right: 0; 
+        top: 60px; 
+      } 
+    } 
+ 
+  } 
+ 
+} 
+ 
+@media screen and (max-width: 420px) { 
+  .relative-block { 
+    position: relative; 
+    width: 280px; 
+  } 
+ 
+  .sleeve { 
+    width: 320px; 
+    left: 10px; 
+  } 
+ 
+  .animateme { 
+    max-width: 280px; 
+    height: 280px; 
+    left: 30px; 
+ 
+    img { 
+      max-width: 280px; 
+    } 
+  } 
+ 
+  .getInTouch div { 
+    padding: 25px 35px; 
+  } 
+ 
 }
