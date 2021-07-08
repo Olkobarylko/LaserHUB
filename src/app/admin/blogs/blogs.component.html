@@ -9,9 +9,11 @@
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label">Більше тексту:</label>
-    <textarea type="text" class="form-control" [(ngModel)]="moreText" name="moreText"></textarea>
+    <input style="display: block; margin-bottom: 15px;" type="button" value="створити посилання"
+      class="btn btn-primary" (click)="createlink()">
+    <textarea type="text" class="form-control" [(ngModel)]="moreText" name="moreText"
+      style="min-height:150px"></textarea>
   </div>
-
 
   <ng-container *ngIf="!imageStatus; else elseTemplate">
     <div class="custom-file">
@@ -54,7 +56,7 @@
       <td>{{blog.moreText}}</td>
       <td><button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button></td>
       <td>
-        <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Видалити</button>
+        <button class="btn btn-danger" (click)="deleteBlog(blog.id)"  [disabled]="editStatus">Видалити</button>
       </td>
     </tr>
   </tbody>

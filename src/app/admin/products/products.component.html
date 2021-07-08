@@ -17,6 +17,7 @@
   </div>
 
   <div class="mb-3" *ngIf="editStatus">
+    <label for="urlName" class="form-label">Зміна Розміру:</label>
     <form (ngSubmit)="onSubmit($event)">
       <div *ngFor="let prod of miniArray ,index as i"><label for="urlName" class="form-label">Розмір:</label>
         <input type="text" class="form-control" name="player" [value]="prod.size">
@@ -26,39 +27,41 @@
         value='Підтвердити зміни в розмірах'>
     </form>
   </div>
-<div class="mb-3" *ngIf="!editStatus">
   <div class="mb-3">
-    <label for="urlName" class="form-label">Ціна:</label>
-    <input type="text" class="form-control" [(ngModel)]="prize" name="prize">
-  </div>
+    <label for="urlName" class="form-label">Дадання Розміру:</label>
+    <div class="mb-3">
+      <label for="urlName" class="form-label">Ціна:</label>
+      <input type="text" class="form-control" [(ngModel)]="prize" name="prize">
+    </div>
 
-  <div class="mb-3">
-    <label for="urlName" class="form-label">Розмір:</label>
-    <input type="text" class="form-control" [(ngModel)]="size" name="size">
+    <div class="mb-3">
+      <label for="urlName" class="form-label">Розмір:</label>
+      <input type="text" class="form-control" [(ngModel)]="size" name="size">
+    </div>
+    <button style="margin-bottom: 10px;" type="button" class="btn btn-secondary" (click)="addSize()">Додати ціну за
+      розмір</button>
+    <p *ngFor="let size of sizeArray,index as i">Розмір : {{size.size}} - <span style="margin-right: 10px;">Ціна
+        :{{size.prise}}</span> <button class="btn btn-danger" (click)="deleteSize(i)">Видалити розмір</button></p>
   </div>
-  <button style="margin-bottom: 10px;" type="button" class="btn btn-secondary" (click)="addSize()">Додати ціну за
-    розмір</button>
-  <p *ngFor="let size of sizeArray">Розмір : {{size.size}} - <span>Ціна :{{size.prise}}</span></p>
-</div>
-<ng-container *ngIf="!imageStatus; else elseTemplate">
-  <div class="custom-file">
-    <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
-    <label class="custom-file-label" for="urlImage">Choose file...</label>
-  </div>
-  <div class="progress mt-3 mb-3">
-    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-      [style.width]="(uploadPercent | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-</ng-container>
-<ng-template #elseTemplate>
-  <div style="display: flex;align-items: center;" class="image mb-3">
-    <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
-    <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
-  </div>
-</ng-template>
+  <ng-container *ngIf="!imageStatus; else elseTemplate">
+    <div class="custom-file">
+      <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="urlImage" required>
+      <label class="custom-file-label" for="urlImage">Choose file...</label>
+    </div>
+    <div class="progress mt-3 mb-3">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+        [style.width]="(uploadPercent | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div style="display: flex;align-items: center;" class="image mb-3">
+      <img style="display: block;margin-right: 20px ;" [src]="image" alt="" width="300px">
+      <i style="cursor: pointer;" class="bi bi-trash-fill ml-3" (click)="deleteImage()"></i>
+    </div>
+  </ng-template>
 
-<button *ngIf="!editStatus" type="button" class="btn btn-success" (click)="addBlog()">Add</button>
-<button *ngIf="editStatus" type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
+  <button *ngIf="!editStatus" type="button" class="btn btn-success" (click)="addBlog()">Add</button>
+  <button *ngIf="editStatus" type="button" class="btn btn-primary" (click)="saveBlog()">Save</button>
 </div>
 <table style="text-align: center;" class="table align-middle">
   <thead>
@@ -81,7 +84,7 @@
       <td>{{blog.description}}</td>
       <td><button class="btn btn-warning" (click)="editBlog(blog.id)">Редагувати</button></td>
       <td>
-        <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Видалити</button>
+        <button class="btn btn-danger" (click)="deleteBlog(blog.id)" [disabled]="editStatus">Видалити</button>
       </td>
     </tr>
   </tbody>

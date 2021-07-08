@@ -21,6 +21,10 @@
     color: rgba(0, 0, 0);
     margin-bottom: 30px;
   }
+
+  p::after {
+    content: '[...]';
+  }
 }
 
 .post-on-blog-featured-img {
