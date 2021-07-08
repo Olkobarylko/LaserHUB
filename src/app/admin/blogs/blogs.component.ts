@@ -16,7 +16,7 @@ export class BlogsComponent implements OnInit {
   title: string;
   image: string;
   description: string;
-  moreText: string;
+  moreText: string = '';
   editIndex: string;
   imageStatus: boolean;
   editStatus: boolean;

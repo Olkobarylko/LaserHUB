@@ -5,7 +5,9 @@
   </div>
   <div class="mb-3">
     <label for="urlName" class="form-label">Опис:</label>
-    <textarea type="text" class="form-control" [(ngModel)]="description" name="description"></textarea>
+    <input style="display: block; margin-bottom: 15px;" type="button" value="створити посилання" class="btn btn-primary"
+      (click)="createlink()">
+    <textarea type="text" class="form-control" [(ngModel)]="description" name="description" style="min-height:150px"></textarea>
   </div>
 
   <ng-container *ngIf="!imageStatus; else elseTemplate">
