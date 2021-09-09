@@ -20,9 +20,11 @@
 }
 
 .product-item {
+  position: relative;
   cursor: pointer;
   width: 31%;
   margin-left: 2%;
+  margin-bottom: 150px;
   text-align: center;
   border-bottom: 2px solid #F5F5F5;
   background: white;
@@ -39,6 +41,9 @@
 }
 
 .product-list {
+  width: 100%;
+  position: absolute;
+  bottom: -132px;
   background: #fafafa;
   padding: 15px 0;
 }
@@ -48,6 +53,7 @@
   font-weight: 400;
   color: #444444;
   margin: 0 0 10px 0;
+  min-height: 50px;
 }
 
 .price {
@@ -81,6 +87,7 @@
     align-items: center;
     flex-direction: column;
   }
+
   .product-item {
     width: 60%;
   }
@@ -91,6 +98,7 @@
     width: 90%;
 
   }
+
   .product-item {
     width: 80%;
     margin-left: 2%;
